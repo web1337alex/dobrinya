@@ -3,7 +3,11 @@
 }
 
 .container{
-    @include container();
+    @include container($container-max-width);
+}
+
+.container-big{
+    @include container($container-big-width);
 }
 
 .row{

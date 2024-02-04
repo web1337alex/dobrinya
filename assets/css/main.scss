@@ -1,5 +1,29 @@
 @import "grid/init";
 
+@font-face {
+  font-family: 'Izhitsa';
+  src: url('../fonts/Izhitsa.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ff-izhitsa{
+  font-family: 'Izhitsa';
+}
+
+.wrapper{
+  width: 100%;
+}
+
+@include bp(xs){
+
+  .header{
+
+
+
+  }
+
+}
 
 
 

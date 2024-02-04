@@ -4,7 +4,15 @@
 
 .container {
   margin: 0 auto;
-  width: 68.75rem;
+  width: 76.25rem;
+  max-width: 100%;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+.container-big {
+  margin: 0 auto;
+  width: 115rem;
   max-width: 100%;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
@@ -85,7 +93,7 @@
   width: calc(100% - 1.25rem);
 }
 
-@media (max-width: 0) {
+@media (min-width: 0) {
   .col-xs-1 {
     flex: 0 0 auto;
     width: calc(8.3333333333% - 1.25rem);
@@ -135,7 +143,7 @@
     width: calc(100% - 1.25rem);
   }
 }
-@media (max-width: 36rem) {
+@media (min-width: 36rem) {
   .col-sm-1 {
     flex: 0 0 auto;
     width: calc(8.3333333333% - 1.25rem);
@@ -185,7 +193,7 @@
     width: calc(100% - 1.25rem);
   }
 }
-@media (max-width: 48rem) {
+@media (min-width: 48rem) {
   .col-md-1 {
     flex: 0 0 auto;
     width: calc(8.3333333333% - 1.25rem);
@@ -235,7 +243,7 @@
     width: calc(100% - 1.25rem);
   }
 }
-@media (max-width: 62rem) {
+@media (min-width: 62rem) {
   .col-lg-1 {
     flex: 0 0 auto;
     width: calc(8.3333333333% - 1.25rem);
@@ -285,7 +293,7 @@
     width: calc(100% - 1.25rem);
   }
 }
-@media (max-width: 75rem) {
+@media (min-width: 75rem) {
   .col-xl-1 {
     flex: 0 0 auto;
     width: calc(8.3333333333% - 1.25rem);
@@ -335,7 +343,7 @@
     width: calc(100% - 1.25rem);
   }
 }
-@media (max-width: 87.5rem) {
+@media (min-width: 87.5rem) {
   .col-xxl-1 {
     flex: 0 0 auto;
     width: calc(8.3333333333% - 1.25rem);
@@ -400,6 +408,20 @@ html, body {
 img {
   width: 100%;
   height: auto;
+}
+
+@font-face {
+  font-family: "Izhitsa";
+  src: url("../fonts/Izhitsa.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+.ff-izhitsa {
+  font-family: "Izhitsa";
+}
+
+.wrapper {
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

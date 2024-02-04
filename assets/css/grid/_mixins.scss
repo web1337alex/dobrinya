@@ -4,7 +4,7 @@
 }
 
 @mixin media($width){
-    @media (max-width: $width) {
+    @media (min-width: $width) {
         @content;
     }
 }
@@ -20,9 +20,9 @@
     width: 100%;
 }
 
-@mixin container{
+@mixin container($container-mw){
     margin: 0 auto;
-    width: $container-max-width;
+    width: $container-mw;
     max-width: 100%;
     padding-left: $gap-grid-half;
     padding-right: $gap-grid-half;

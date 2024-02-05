@@ -1,0 +1,32 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 1  | / @include bp(xs){
+ * 2  | |   .intro{
+ * 3  | |     width: 100%;
+ * 4  | |     padding-top: px2rem(102);
+ * 5  | |     padding-bottom: px2rem(76);
+ * 6  | |     background-position: center center;
+ * 7  | |     background-size: cover;
+ * 8  | | 
+ * 9  | |     &__card{
+ * 10 | |       background-color: $default-light-color;
+ * 11 | |       box-shadow: $header-box-shadow;
+ * 12 | |       border-radius: px2rem(23);
+ * 13 | | 
+ * 14 | |     }
+ * 15 | | 
+ * 16 | |   }
+ * 17 | \ }
+ *    '
+ *   intro.scss 1:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 1  \2502  \250c  @include bp(xs){\a 2  \2502  \2502    .intro{\a 3  \2502  \2502      width: 100%;\a 4  \2502  \2502      padding-top: px2rem(102);\a 5  \2502  \2502      padding-bottom: px2rem(76);\a 6  \2502  \2502      background-position: center center;\a 7  \2502  \2502      background-size: cover;\a 8  \2502  \2502  \a 9  \2502  \2502      &__card{\a 10 \2502  \2502        background-color: $default-light-color;\a 11 \2502  \2502        box-shadow: $header-box-shadow;\a 12 \2502  \2502        border-radius: px2rem(23);\a 13 \2502  \2502  \a 14 \2502  \2502      }\a 15 \2502  \2502  \a 16 \2502  \2502    }\a 17 \2502  \2514  }\a    \2575 \a   intro.scss 1:1  root stylesheet";
+}

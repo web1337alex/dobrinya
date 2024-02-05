@@ -1,0 +1,209 @@
+@include bp(xs){
+
+  .header{
+    padding-top: px2rem(12);
+    padding-bottom: px2rem(12);
+    position: relative;
+
+    &__box{
+      display: flex;
+      text-decoration: none;
+
+      &--logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: px2rem(10);
+
+        img{
+          width: px2rem(44);
+          height: px2rem(44);
+        }
+
+      }
+
+      &--text{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        &--title{
+          font-size: px2rem(18);
+          line-height: px2rem(18.14);
+          color: $color-text-primary;
+        }
+
+        &--subtitle{
+          font-size: px2rem(15);
+          line-height: px2rem(11.7);
+          color: $color-text-secondary;
+        }
+
+      }
+
+    }
+
+    &__burger{
+      display: flex;
+      justify-content: end;
+      cursor: pointer;
+
+      &--icon{
+        width: px2rem(44);
+        height: px2rem(44);
+        background-color: $color-onbg;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &--line{
+          width: px2rem(20);
+          height: px2rem(2);
+          background-color: $color-darkGray;
+          border-radius: px2rem(2);
+          position: relative;
+          &::before, &::after{
+            content: '';
+            width: px2rem(20);
+            height: px2rem(2);
+            background-color: $color-darkGray;
+            border-radius: px2rem(2);
+            position: absolute;
+            left: 0;
+          }
+          &::before{
+            top: px2rem(-6);
+          }
+          &::after{
+            top: px2rem(6);
+          }
+
+          &, &::before, &::after{
+            transition: all 0.3s;
+          }
+
+        }
+      }
+    }
+
+    &__burger--icon.active{
+      .header__burger--icon--line{
+        background-color: transparent;
+        &::before{
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &::after{
+          top: 0;
+          transform: rotate(-45deg);
+        }
+
+      }
+    }
+
+    &__nav{
+      position: absolute;
+      left: -100vw;
+      top: px2rem(68);
+      transition: left 0.3s, opacity 0.3s;
+      opacity: 0;
+      box-shadow: $header-box-shadow;
+      border-radius: px2rem(23);
+      background-color: $default-light-color;
+
+      &.active{
+        opacity: 1;
+        left: 0;
+        z-index: 999;
+      }
+
+      &--menu{
+        width: 100%;
+        list-style: none;
+        padding: px2rem(23);
+
+        &--item{
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          margin-bottom: px2rem(3);
+          a{
+            text-decoration: none;
+            font-size: px2rem(14);
+            line-height: px2rem(16.71);
+            font-family: 'SF Pro Text Regular';
+            color: $text-color;
+          }
+          span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: px2rem(5);
+            width: px2rem(13);
+            height: px2rem(13);
+            background-color: $first-accent-color;
+            mask-size: cover;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            -webkit-mask-size: cover;
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include bp(md){
+
+  .header{
+    &__nav{
+      position: static;
+      opacity: 1;
+      box-shadow: unset;
+      top: unset;
+      left: unset;
+      &--menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        &--item{
+          margin-left: px2rem(30);
+        }
+      }
+    }
+    &__button{
+      display: flex;
+      align-items: center;
+      justify-content: end;
+
+      .button{
+        height: fit-content;
+        padding-left: px2rem(20);
+        padding-right: px2rem(22);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::after{
+          content: "";
+          display: block;
+          width: px2rem(13);
+          height: px2rem(13);
+          background-color: $default-light-color;
+          mask-repeat: no-repeat;
+          mask-size: contain;
+          mask-image: url("../images/check.svg");
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-size: contain;
+          -webkit-mask-image: url("../images/check.svg");
+          margin-left: px2rem(8);
+        }
+      }
+    }
+  }
+
+}

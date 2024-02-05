@@ -1,29 +1,31 @@
 @import "grid/init";
+@import "variables";
+@import "fonts";
 
-@font-face {
-  font-family: 'Izhitsa';
-  src: url('../fonts/Izhitsa.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+body{
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: 'SF Pro Text Regular';
+  color: $text-color;
 }
 
-.ff-izhitsa{
-  font-family: 'Izhitsa';
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $first-accent-color;
+  border-radius: px2rem(9);
+  color: $default-light-color;
+  padding-top: px2rem(11);
+  padding-bottom: px2rem(11);
+  font-size: px2rem(12);
+  line-height: px2rem(14.4);
 }
 
-.wrapper{
-  width: 100%;
-}
 
-@include bp(xs){
-
-  .header{
-
-
-
-  }
-
-}
+@import "debug";
+@import "sections/header";
+@import "sections/intro";
 
 
 

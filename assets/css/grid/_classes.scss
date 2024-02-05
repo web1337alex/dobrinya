@@ -32,5 +32,14 @@
                 @include col($i);
             }
         }
+        .hide-#{$bp}{
+            display: none !important;
+        }
+        .flex-#{$bp}{
+            display: flex !important;
+        }
+        .block-#{$bp}{
+            display: block !important;
+        }
     }
 }

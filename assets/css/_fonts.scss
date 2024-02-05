@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Izhitsa';
+  src: url('../fonts/Izhitsa.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Text Regular';
+  src: url('../fonts/sfpro/SFProText-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Text Medium';
+  src: url('../fonts/sfpro/SFProText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Text Heavy';
+  src: url('../fonts/sfpro/SFProText-Heavy.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ff-izhitsa{
+  font-family: 'Izhitsa';
+}
+
+.h1, .h2{
+  font-family: 'Izhitsa';
+  & > span{
+    color: $first-accent-color;
+  }
+}
+
+@include bp(xs){
+
+  .h1{
+    font-size: px2rem(50);
+    line-height: px2rem(50.39);
+  }
+
+  .h2{
+    font-size: px2rem(16);
+    line-height: px2rem(19.2);
+  }
+
+}
+
+@include bp(lg){
+
+  .h2{
+    font-size: px2rem(20);
+    line-height: px2rem(24);
+  }
+
+  .h1{
+    font-size: px2rem(55);
+    line-height: px2rem(66);
+  }
+
+}

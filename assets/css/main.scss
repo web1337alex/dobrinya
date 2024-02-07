@@ -13,6 +13,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   background-color: $first-accent-color;
   border-radius: px2rem(9);
   color: $default-light-color;
@@ -26,6 +27,6 @@ body{
 @import "debug";
 @import "sections/header";
 @import "sections/intro";
-
+@import "sections/achievements";
 
 

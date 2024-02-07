@@ -502,9 +502,15 @@ a {
   font-style: normal;
 }
 @font-face {
+  font-family: "SF Pro Text Bold";
+  src: url("../fonts/sfpro/SFProText-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
   font-family: "SF Pro Text Heavy";
   src: url("../fonts/sfpro/SFProText-Heavy.ttf") format("truetype");
-  font-weight: 500;
+  font-weight: 800;
   font-style: normal;
 }
 .ff-izhitsa {
@@ -549,6 +555,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   background-color: #98B23D;
   border-radius: 0.5625rem;
   color: #ffffff;
@@ -867,6 +874,151 @@ body {
     font-size: 0.875rem;
     line-height: 1.05rem;
     margin-bottom: 1.4375rem;
+  }
+}
+@media (min-width: 0) {
+  .achievements {
+    padding-top: 5.9375rem;
+    padding-bottom: 3.875rem;
+    background-color: #FFFFFC;
+    position: relative;
+    overflow: hidden;
+  }
+  .achievements::before {
+    content: "";
+    position: absolute;
+    top: -12%;
+    width: 100%;
+    aspect-ratio: 936.57/927.45;
+    background-repeat: no-repeat;
+    background-image: url(../images/achievements-bg.svg);
+    background-size: contain;
+    background-position: left;
+    z-index: 1;
+  }
+  .achievements > .container > .row {
+    align-items: center;
+    z-index: 2;
+    position: relative;
+  }
+  .achievements__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .achievements__content--title {
+    font-size: 3.125rem;
+    line-height: 3.578125rem;
+    text-align: center;
+    margin-bottom: 0.6875rem;
+  }
+  .achievements__content--text {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+    color: rgb(103, 103, 103);
+    margin-bottom: 1.4375rem;
+  }
+  .achievements__content--button {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 1.6875rem;
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
+    font-family: "SF Pro Text Bold";
+    width: fit-content;
+    padding: 0.75rem 1.375rem;
+  }
+  .achievements__content--button::after {
+    content: "";
+    display: flex;
+    width: 1.25rem;
+    height: 1.25rem;
+    mask-image: url("../images/achievements-button.svg");
+    mask-size: contain;
+    -webkit-mask-image: url("../images/achievements-button.svg");
+    -webkit-mask-size: contain;
+    background-color: #ffffff;
+    margin-left: 0.6875rem;
+  }
+  .achievements__list > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .achievements__list > .row > * {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  .achievements__list > .row > *:not(:last-child) {
+    margin-bottom: 1.3125rem;
+  }
+  .achievements__list--item {
+    width: 100%;
+    height: 100%;
+    border: 0.125rem solid rgb(61, 134, 138);
+    border-radius: 0.875rem;
+    padding: 1.5625rem;
+  }
+  .achievements__list--item--icon {
+    height: 3rem;
+    width: auto;
+    margin-bottom: 1.5rem;
+  }
+  .achievements__list--item--icon img {
+    width: auto;
+    height: auto;
+  }
+  .achievements__list--item--title {
+    font-family: "Izhitsa";
+    font-size: 1.5625rem;
+    line-height: 1.875rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0.625rem;
+  }
+  .achievements__list--item--text {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: rgb(114, 128, 149);
+  }
+}
+@media (min-width: 48rem) {
+  .achievements::before {
+    top: -50%;
+    width: 50%;
+  }
+  .achievements__content--title {
+    font-size: 3.125rem;
+    line-height: 3.578125rem;
+    text-align: left;
+  }
+  .achievements__content--text {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+  }
+  .achievements__content--button {
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
+  }
+  .achievements__list > .row {
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .achievements__list > .row > * {
+    width: calc(50% - 0.65625rem);
+    margin-bottom: 1.3125rem;
+  }
+  .achievements__list--item--icon {
+    height: 3rem;
+    width: auto;
+    margin-bottom: 1.5rem;
+  }
+  .achievements__list--item--title {
+    font-size: 1.5625rem;
+    line-height: 1.875rem;
+  }
+  .achievements__list--item--text {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
   }
 }
 

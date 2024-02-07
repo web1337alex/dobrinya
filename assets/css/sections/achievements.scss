@@ -1,0 +1,197 @@
+@include bp(xs) {
+
+	.achievements {
+		padding-top: px2rem(95);
+		padding-bottom: px2rem(62);
+		background-color: $body-bg-color;
+		position: relative;
+		overflow: hidden;
+
+		&::before{
+			content: "";
+			position: absolute;
+			top: -12%;
+			width: 100%;
+			aspect-ratio: 936.57/927.45;
+			background-repeat: no-repeat;
+			background-image: url(../images/achievements-bg.svg);
+			background-size: contain;
+			background-position: left;
+			z-index: 1;
+		}
+
+		& > .container > .row {
+			align-items: center;
+			z-index: 2;
+			position: relative;
+		}
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+
+			&--title {
+				font-size: px2rem(50);
+				line-height: px2rem(57.25);
+				text-align: center;
+				margin-bottom: px2rem(11);
+			}
+
+			&--text {
+				font-size: px2rem(20);
+				line-height: px2rem(23);
+				color: $color-text-light;
+				margin-bottom: px2rem(23);
+			}
+
+			&--button {
+				display: flex;
+				align-items: center;
+				text-transform: uppercase;
+				margin-bottom: px2rem(27);
+				font-size: px2rem(15);
+				line-height: px2rem(18);
+				font-family: 'SF Pro Text Bold';
+				width: fit-content;
+				padding: px2rem(12) px2rem(22);
+
+				&::after {
+					content: '';
+					display: flex;
+					width: px2rem(20);
+					height: px2rem(20);
+					mask-image: url("../images/achievements-button.svg");
+					mask-size: contain;
+					-webkit-mask-image: url("../images/achievements-button.svg");
+					-webkit-mask-size: contain;
+					background-color: $default-light-color;
+					margin-left: px2rem(11);
+				}
+			}
+		}
+
+		&__list {
+
+			& > .row {
+				margin-left: 0;
+				margin-right: 0;
+
+				& > * {
+					margin-left: 0;
+					margin-right: 0;
+					width: 100%;
+
+					&:not(:last-child) {
+						margin-bottom: px2rem(21);
+					}
+
+				}
+
+			}
+
+			&--item {
+				width: 100%;
+				height: 100%;
+				border: px2rem(2) solid $default-cian;
+				border-radius: px2rem(14);
+				padding: px2rem(25);
+
+				&--icon {
+					height: px2rem(48);
+					width: auto;
+					margin-bottom: px2rem(24);
+
+					img {
+						width: auto;
+						height: auto;
+					}
+				}
+
+				&--title {
+					font-family: 'Izhitsa';
+					font-size: px2rem(25);
+					line-height: px2rem(30);
+					color: $text-color;
+					margin-bottom: px2rem(10);
+				}
+
+				&--text {
+					font-size: px2rem(20);
+					line-height: px2rem(24);
+					color: $text-cian;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+@include bp(md) {
+
+	.achievements {
+
+		&::before{
+			top: -50%;
+			width: 50%;
+		}
+
+		&__content {
+
+			&--title {
+				font-size: px2rem(50);
+				line-height: px2rem(57.25);
+				text-align: left;
+			}
+
+			&--text {
+				font-size: px2rem(20);
+				line-height: px2rem(23);
+			}
+
+			&--button {
+				font-size: px2rem(15);
+				line-height: px2rem(18);
+			}
+
+		}
+
+		&__list {
+
+			& > .row {
+				justify-content: space-between;
+				align-items: stretch;
+				& > * {
+					width: calc(50% - (px2rem(21) / 2));
+					margin-bottom: px2rem(21);
+				}
+
+			}
+
+			&--item {
+
+				&--icon {
+					height: px2rem(48);
+					width: auto;
+					margin-bottom: px2rem(24);
+				}
+
+				&--title {
+					font-size: px2rem(25);
+					line-height: px2rem(30);
+				}
+
+				&--text {
+					font-size: px2rem(20);
+					line-height: px2rem(24);
+				}
+
+			}
+
+		}
+
+	}
+
+}

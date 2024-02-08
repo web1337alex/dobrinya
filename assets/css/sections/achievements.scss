@@ -3,7 +3,6 @@
 	.achievements {
 		padding-top: px2rem(95);
 		padding-bottom: px2rem(62);
-		background-color: $body-bg-color;
 		position: relative;
 		overflow: hidden;
 
@@ -35,6 +34,7 @@
 				line-height: px2rem(57.25);
 				text-align: center;
 				margin-bottom: px2rem(11);
+				color: $title-color;
 			}
 
 			&--text {

@@ -1,0 +1,29 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 1  | / @include bp(md){
+ * 2  | | 
+ * 3  | |     .advantages{
+ * 4  | |         &__content{
+ * 5  | |             &--text{
+ * 6  | |                 display: none;
+ * 7  | |                 &.active{
+ * 8  | |                     display: flex;
+ * 9  | |                 }
+ * 10 | |             }
+ * 11 | |         }
+ * 12 | |     }
+ * 13 | | 
+ * 14 | \ }
+ *    '
+ *   advantages.scss 1:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 1  \2502  \250c  @include bp(md){\a 2  \2502  \2502  \a 3  \2502  \2502      .advantages{\a 4  \2502  \2502          &__content{\a 5  \2502  \2502              &--text{\a 6  \2502  \2502                  display: none;\a 7  \2502  \2502                  &.active{\a 8  \2502  \2502                      display: flex;\a 9  \2502  \2502                  }\a 10 \2502  \2502              }\a 11 \2502  \2502          }\a 12 \2502  \2502      }\a 13 \2502  \2502  \a 14 \2502  \2514  }\a    \2575 \a   advantages.scss 1:1  root stylesheet";
+}

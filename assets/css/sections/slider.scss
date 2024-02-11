@@ -1,0 +1,60 @@
+.carousel {
+	position: relative;
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+
+	&__slides {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+		margin: 0 (-1 * (calc($gap-grid-half)));
+	}
+
+	&__slide{
+		margin: 0 calc($gap-grid-half);
+	}
+
+	&__button {
+		position: absolute;
+		width: calc($gap-grid * 2);
+		height: calc($gap-grid * 2);
+		border-radius: 50%;
+		background-color: var(--light);
+		color: $first-accent-color;
+		top: calc(50% - (($gap-grid * 2) / 2));
+		outline: none;
+		border: none;
+		cursor: pointer;
+		box-shadow: $header-box-shadow;
+
+		&--left{
+			left: 0;
+		}
+
+		&--right{
+			right: 0;
+		}
+
+	}
+
+	&__indicators{
+		margin-top: 1.5rem;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__indicator{
+		width: calc($gap-grid * 0.625);
+		height: calc($gap-grid * 0.625);
+		aspect-ratio: 1 / 1;
+		background-color: $color-text-light;
+		margin: 0 calc(($gap-grid * 1.25) / 2);
+		border-radius: 50%;
+
+		&--active{
+			background-color: $first-accent-color;
+		}
+
+	}
+}

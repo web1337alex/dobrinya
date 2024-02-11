@@ -19,27 +19,41 @@
 
 }
 
-@for $i from 1 through $grid-collumns-count{
-    .col-#{$i}{
-        @include col($i);
-    }
-}
+@each $lib, $grid-collumns-count in $grid-collumns-counts {
 
-@each $bp, $width in $grid-breakpoints{
-    @include media($width){
-        @for $i from 1 through $grid-collumns-count{
-            .col-#{$bp}-#{$i}{
-                @include col($i);
+    @if($lib == 'bs'){
+        $lib: '';
+    }
+    @else {
+        $lib: '#{$lib}-';
+    }
+
+    @for $i from 1 through $grid-collumns-count {
+        .col-#{$lib}#{$i} {
+            @include col($i, $grid-collumns-count);
+        }
+    }
+
+    @each $bp, $width in $grid-breakpoints {
+        @include media($width) {
+            @for $i from 1 through $grid-collumns-count {
+                .col-#{$lib}#{$bp}-#{$i} {
+                    @include col($i, $grid-collumns-count);
+                }
+            }
+            .hide-#{$lib}#{$bp} {
+                display: none !important;
+            }
+            .flex-#{$lib}#{$bp} {
+                display: flex !important;
+            }
+            .block-#{$lib}#{$bp} {
+                display: block !important;
             }
         }
-        .hide-#{$bp}{
-            display: none !important;
-        }
-        .flex-#{$bp}{
-            display: flex !important;
-        }
-        .block-#{$bp}{
-            display: block !important;
-        }
     }
+}
+.jcc{
+    display: flex;
+    justify-content: center;
 }

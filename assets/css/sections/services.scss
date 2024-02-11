@@ -1,0 +1,123 @@
+@include bp(xs){
+
+	.services{
+
+		&__title{
+			text-align: center;
+			margin-bottom: px2rem(61);
+		}
+
+		&__list{
+			justify-content: center;
+
+			&--item{
+				width: calc(100% - px2rem(65));
+				position: relative;
+				margin-bottom: px2rem(22);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				padding: px2rem(20) px2rem(12);
+
+				& > *:not(&::before, &::after){
+					text-align: center;
+					z-index: 1;
+				}
+
+				&--icon{
+					width: 100%;
+					height: px2rem(70);
+					margin-bottom: px2rem(10);
+					background-color: $default-cian;
+					mask-size: contain;
+					mask-position: center;
+					mask-repeat: no-repeat;
+					-webkit-mask-size: contain;
+					-webkit-mask-position: center;
+					-webkit-mask-repeat: no-repeat;
+					position: relative;
+				}
+
+				&--title{
+					font-size: px2rem(20);
+					line-height: px2rem(24);
+					color: $text-color;
+					margin-bottom: px2rem(10);
+					text-align: center;
+				}
+
+				&--text{
+					font-size: px2rem(13);
+					line-height: px2rem(16);
+					color: $services-card-text-color;
+					letter-spacing: 0.03em;
+					text-align: center;
+				}
+
+				&::before{
+					content: '';
+					width: 100%;
+					height: 100%;
+					display: block;
+					opacity: 0;
+					position: absolute;
+					z-index: -1;
+					background-color: $card-hover-bg;
+					border-radius: px2rem(30);
+					transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+				}
+
+				&::after{
+					content: '';
+					width: 100%;
+					top: px2rem(25);
+					height: px2rem(65);
+					display: block;
+					position: absolute;
+					mask-image: url("../images/services-card-icon-before.svg");
+					mask-position: center;
+					mask-repeat: no-repeat;
+					mask-size: contain;
+					-webkit-mask-image: url("../images/services-card-icon-before.svg");
+					-webkit-mask-position: center;
+					-webkit-mask-repeat: no-repeat;
+					-webkit-mask-size: contain;
+					background-color: $services-card-before-color;
+					z-index: -1;
+				}
+
+				&:hover::before{
+					opacity: 1;
+					transform: rotate(-5deg);
+				}
+
+			}
+
+		}
+
+		&__button.button.btn-border{
+			font-size: px2rem(20);
+			line-height: px2rem(24);
+			padding: px2rem(5);
+			margin-bottom: px2rem(40);
+		}
+	}
+}
+
+@include bp(md){
+
+	.services{
+
+		&__title{
+			margin-bottom: px2rem(68);
+		}
+
+		&__list{
+			&--item{
+				width: calc((100% / 5) - (px2rem(40) / 2));
+			}
+		}
+
+	}
+}

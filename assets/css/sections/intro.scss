@@ -26,8 +26,11 @@
       z-index: 2;
     }
 
-    &__title{
+    &__title > .h1{
       color: $default-light-color;
+      background: unset;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
     }
 
     &__card {

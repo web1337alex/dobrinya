@@ -24,11 +24,33 @@ body{
   line-height: px2rem(14.4);
 }
 
+.button.btn-border{
+  background-color: $default-light-color;
+  border: px2rem(1) solid $first-accent-color;
+  color: $green-light-transparent;
+  font-size: px2rem(20);
+  line-height: px2rem(24);
+  font-family: 'SF Pro Text Bold';
+  padding: px2rem(5) px2rem(10);
+  text-transform: uppercase;
+  width: fit-content;
+  span{
+    color: $green-light;
+  }
+}
+
 
 @import "debug";
 @import "sections/header";
 @import "sections/intro";
 @import "sections/achievements";
 @import "sections/advantages";
+@import "sections/slider";
+@import "sections/team";
+@import "sections/services";
+
+
+
+
 
 

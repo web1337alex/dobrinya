@@ -1,6 +1,6 @@
-@mixin col($size){
+@mixin col($size, $grid-count){
     flex: 0 0 auto;
-    width: calc(#{percentage($size / $grid-collumns-count)} - #{$gap-grid});
+    width: calc(#{percentage($size / $grid-count)} - #{$gap-grid});
 }
 
 @mixin media($width){

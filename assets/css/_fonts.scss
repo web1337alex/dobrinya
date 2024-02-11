@@ -49,6 +49,9 @@
   .h1{
     font-size: px2rem(50);
     line-height: px2rem(50.39);
+    background-image: $title-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .h2{

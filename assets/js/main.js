@@ -47,3 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+new Carousel(document.querySelector(".team__list"), {0: 2, 768: 3}, {arrows: false, nav: true});
+
+

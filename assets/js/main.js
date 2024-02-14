@@ -49,4 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 new Carousel(document.querySelector(".team__list"), {0: 2, 768: 3}, {arrows: false, nav: true});
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Получаем контейнер для .reviews__box--row и прокручиваем его к середине
+    let reviewsContainer = document.querySelector('.reviews__box--container');
+    if (reviewsContainer) {
+        let scrollTo = (reviewsContainer.scrollWidth - reviewsContainer.offsetWidth) / 2;
+        reviewsContainer.scrollLeft = scrollTo;
+    }
 
+    // Добавляем обработчики событий для стрелок прокрутки
+    document.querySelectorAll('.reviews__box--arrow').forEach(arrow => {
+        arrow.addEventListener('click', function(e) {
+            let scrollAmount = 70; // количество пикселей для прокрутки
+            if (e.target.closest('.reviews__box--arrow').classList.contains('left')) {
+                reviewsContainer.scrollLeft -= scrollAmount;
+            } else if (e.target.closest('.reviews__box--arrow').classList.contains('right')) {
+                reviewsContainer.scrollLeft += scrollAmount;
+            }
+        });
+    });
+});

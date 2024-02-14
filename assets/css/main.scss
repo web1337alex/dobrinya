@@ -10,36 +10,7 @@ body{
   background-color: $body-bg-color;
 }
 
-.button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: $first-accent-color;
-  border-radius: px2rem(9);
-  color: $default-light-color;
-  padding-top: px2rem(11);
-  padding-bottom: px2rem(11);
-  font-size: px2rem(12);
-  line-height: px2rem(14.4);
-}
-
-.button.btn-border{
-  background-color: $default-light-color;
-  border: px2rem(1) solid $first-accent-color;
-  color: $green-light-transparent;
-  font-size: px2rem(20);
-  line-height: px2rem(24);
-  font-family: 'SF Pro Text Bold';
-  padding: px2rem(5) px2rem(10);
-  text-transform: uppercase;
-  width: fit-content;
-  span{
-    color: $green-light;
-  }
-}
-
-
+@import "buttons";
 @import "debug";
 @import "sections/header";
 @import "sections/intro";
@@ -50,8 +21,3 @@ body{
 @import "sections/services";
 @import "sections/consult";
 @import "sections/reviews";
-
-
-
-
-

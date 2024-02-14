@@ -1,0 +1,238 @@
+@include bp(xs){
+	.reviews{
+		display: none;
+	}
+}
+
+@include bp(md){
+	.reviews{
+		display: block;
+
+		& > section{
+			width: 100%;
+		}
+
+		&__title{
+			margin-bottom: px2rem(43);
+			&--box{
+				text-transform: uppercase;
+				text-align: center;
+				&--subtitle{
+					color: $text-color;
+					font-size: px2rem(30);
+					line-height: px2rem(35);
+					font-family: 'SF Pro Text Medium';
+					span{
+						color: $reviews-subtitle-color;
+					}
+				}
+			}
+		}
+
+		&__box{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-bottom: px2rem(120);
+			.container-big{
+				overflow-x: hidden;
+				width: calc($container-big-width - (px2rem(60) * 2));
+			}
+			&--arrow{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: px2rem(46);
+				height: px2rem(46);
+				border-radius: 50%;
+				background-color: $default-light-color;
+				border: px2rem(1) solid $text-color;
+				cursor: pointer;
+				&::before{
+					content: "";
+					display: block;
+					width: px2rem(10);
+					height: 100%;
+					mask-image: url("../images/reviews/arrow.svg");
+					mask-position: center;
+					mask-size: contain;
+					mask-repeat: no-repeat;
+					-webkit-mask-image: url("../images/reviews/arrow.svg");
+					-webkit-mask-position: center;
+					-webkit-mask-size: contain;
+					-webkit-mask-repeat: no-repeat;
+					background-color: $text-color;
+				}
+			}
+			&--arrow.right{
+				transform: rotate(180deg);
+			}
+			&--row{
+				padding-top: px2rem(20);
+				min-width: 100vw;
+				flex-wrap: nowrap;
+				&--item{
+					display: inline-flex;
+					flex-direction: column;
+					min-width: px2rem(614);
+					&--text{
+						display: flex;
+						border-radius: px2rem(18);
+						height: px2rem(170);
+						box-shadow: $review-item-drop-shadow;
+						background-color: $default-light-color;
+						padding: px2rem(29) px2rem(29) px2rem(42) px2rem(29);
+						position: relative;
+						&::before, &::after{
+							content: "";
+							display: block;
+							aspect-ratio: 1 / 1;
+							position: absolute;
+							background-color: $default-light-color;
+							border-radius: 50%;
+						}
+						&::before{
+							width: px2rem(36);
+							height: px2rem(36);
+							bottom: px2rem(-14);
+							left: px2rem(92);
+							box-shadow: $review-item-circle-1-drop-shadow;
+						}
+						&::after{
+							width: px2rem(18);
+							height: px2rem(18);
+							bottom: px2rem(-34);
+							left: px2rem(80);
+							box-shadow: $review-item-circle-2-drop-shadow;
+						}
+						&--content{
+							font-size: px2rem(16);
+							line-height: px2rem(22.72);
+							color: $text-color;
+							&::before{
+								display: inline;
+								content: "“";
+							}
+							&::after{
+								display: inline;
+								content: "“";
+							}
+						}
+					}
+					&--author{
+						margin-top: px2rem(28);
+						display: flex;
+						align-items: center;
+						&--photo{
+							width: px2rem(66);
+							height: px2rem(66);
+							border-radius: 50%;
+							overflow: hidden;
+							margin-left: px2rem(23);
+							& > img{
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+							}
+						}
+						&--desc{
+							display: flex;
+							flex-direction: column;
+							margin-left: px2rem(15);
+							&--name{
+								font-family: 'SF Pro Text Semibold';
+								font-size: px2rem(20);
+								line-height: px2rem(28.4);
+								color: $review-item-name-color;
+							}
+							&--date{
+								font-family: 'SF Pro Text Medium';
+								font-size: px2rem(16);
+								line-height: px2rem(22.72);
+								color: $review-item-date-color;
+							}
+						}
+						&--grade{
+							margin-left: px2rem(11);
+							&--text{
+								display: flex;
+								align-items: center;
+								font-size: px2rem(16);
+								line-height: px2rem(22.72);
+								font-family: 'SF Pro Text Heavy';
+								color: $review-item-grade-text-color;
+								&::before{
+									content: "";
+									display: inline-flex;
+									background-color: $review-item-grade-text-color;
+									width: px2rem(18);
+									height: px2rem(18);
+									aspect-ratio: 1 / 1;
+									mask-image: url("../images/reviews/star.svg");
+									mask-size: contain;
+									mask-repeat: no-repeat;
+									mask-position: center;
+									-webkit-mask-image: url("../images/reviews/star.svg");
+									-webkit-mask-size: contain;
+									-webkit-mask-repeat: no-repeat;
+									-webkit-mask-position: center;
+									margin-right: px2rem(4);
+								}
+							}
+						}
+					}
+				}
+
+				&--item.green > &--item--text, &--item.green > &--item--text::before, &--item.green > &--item--text::after{
+					background-color: $review-item-green-text;
+				}
+
+				&--item.green > &--item--text::before,
+				&--item.red > &--item--text::before{
+					box-shadow: unset;
+				}
+
+				&--item.green > &--item--text > &--item--text--label{
+					position: absolute;
+					border-radius: px2rem(6);
+					padding: px2rem(4) px2rem(5);
+					transform: rotate(9deg);
+					background-color: $default-light-color;
+					box-shadow: $review-label-box-shadow;
+					letter-spacing: 0.03em;
+					font-size: px2rem(10);
+					line-height: px2rem(16);
+					font-family: 'SF Pro Text Heavy';
+					text-transform: uppercase;
+					text-align: center;
+					color: $review-item-green-text;
+					top: px2rem(0);
+					right: px2rem(-15);
+				}
+
+				&--item.green > &--item--text > &--item--text--content,
+				&--item.red > &--item--text > &--item--text--content{
+					color: $default-light-color;
+				}
+
+				&--item.mw301{
+					min-width: px2rem(301);
+					max-width: px2rem(301);
+				}
+
+				&--item.red > &--item--text, &--item.red > &--item--text::before, &--item.red > &--item--text::after{
+					background-color: $review-item-red-text;
+				}
+
+				&--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text::before{
+					background-color: $review-item-red-text;
+				}
+
+				&--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text{
+					color: $review-item-red-text;
+				}
+
+			}
+		}
+	}
+}

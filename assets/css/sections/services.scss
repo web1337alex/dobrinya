@@ -100,7 +100,8 @@
 			font-size: px2rem(20);
 			line-height: px2rem(24);
 			padding: px2rem(5);
-			margin-bottom: px2rem(40);
+			margin-top: px2rem(60);
+			margin-bottom: px2rem(73);
 		}
 	}
 }
@@ -117,6 +118,11 @@
 			&--item{
 				width: calc((100% / 5) - (px2rem(40) / 2));
 			}
+		}
+
+		&__button{
+			margin-top: px2rem(120);
+			margin-bottom: px2rem(120);
 		}
 
 	}

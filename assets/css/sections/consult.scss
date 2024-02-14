@@ -1,0 +1,195 @@
+@include bp(xs){
+
+	.consult{
+
+		&__title{
+			font-size: px2rem(30);
+			line-height: px2rem(30);
+			margin-bottom: px2rem(70);
+			text-align: center;
+		}
+
+		&__content{
+
+			&--form{
+				&--box{
+					&--labels{
+						display: flex;
+						flex-direction: column;
+						&--item{
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							padding: px2rem(2) px2rem(5);
+							border-radius: px2rem(6);
+							font-family: 'SF Pro Text Heavy';
+							font-size: px2rem(10);
+							line-height: px2rem(16);
+							letter-spacing: 0.03em;
+							text-transform: uppercase;
+							width: fit-content;
+							&.green{
+								background-color: $green-label-color;
+								color: $green-label-text;
+								margin-bottom: px2rem(6);
+								&:after{
+									display: inline;
+									content: '';
+									border-radius: 50%;
+									width: px2rem(10);
+									height: px2rem(10);
+									background-color: $green-label-marker;
+									margin-left: px2rem(7);
+								}
+							}
+							&.yellow{
+								background-color: $yellow-label-color;
+								color: $yellow-label-text;
+								span{
+									font-family: 'SF Pro Text Bold';
+									margin-left: px2rem(4);
+									color: $yellow-label-marker;
+									text-transform: uppercase;
+									font-size: px2rem(10);
+									line-height: 1;
+								}
+							}
+						}
+					}
+					&--input{
+						display: flex;
+						flex-direction: column;
+						&--phone{
+							width: 100%;
+							outline: none;
+							border: px2rem(1) solid $text-color;
+							border-radius: px2rem(9);
+							padding: px2rem(20) px2rem(44);
+							font-size: px2rem(25);
+							line-height: px2rem(30);
+							font-family: 'SF Pro Text Light';
+							color: $input-text-color;
+							margin-top: px2rem(12);
+							margin-bottom: px2rem(12);
+						}
+						&--button{
+							padding: px2rem(12) px2rem(33);
+							font-size: px2rem(18);
+							line-height: px2rem(21.6);
+							font-family: 'SF Pro Text Bold';
+							width: fit-content;
+							text-transform: uppercase;
+							align-self: end;
+							margin-bottom: px2rem(15);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include bp(md){
+
+	.consult{
+		margin-bottom: px2rem(120);
+
+		&__title{
+			font-size: px2rem(60);
+			line-height: px2rem(60.5);
+			text-transform: uppercase;
+			margin-bottom: px2rem(113);
+		}
+
+		&__content{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: relative;
+			padding: px2rem(70) 0;
+
+			&::before{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				content: '';
+				border: px2rem(1) solid $text-color;
+				border-radius: px2rem(70);
+				top: 0;
+				left: 0;
+				z-index: -2;
+				transform: scale(0.9);
+			}
+
+			& > *:not(&::before, &::after){
+				z-index: 1;
+			}
+
+			&--title{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.h2{
+					display: flex;
+					max-width: px2rem(450);
+					font-size: px2rem(40);
+					line-height: px2rem(40);
+					text-align: center;
+					text-transform: uppercase;
+					background-image: $title-gradient;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+			}
+
+			&--form{
+				&--box{
+					&--labels{
+						flex-direction: row;
+						&--item{
+							&.green{
+								margin-bottom: 0;
+								margin-right: px2rem(5);
+							}
+						}
+					}
+
+					&--input{
+						margin-top: px2rem(6);
+						flex-direction: row;
+						justify-content: space-between;
+						border: px2rem(1) solid $text-color;
+						border-radius: px2rem(9);
+						position: relative;
+
+						& > *:not(&::before){
+							z-index: 1;
+						}
+
+						&::before{
+							display: block;
+							position: absolute;
+							content: '';
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							transform: scale(1.2);
+							background-color: $body-bg-color;
+							z-index: -1;
+						}
+
+						&--phone{
+							border: none;
+							padding: 0 px2rem(10);
+						}
+						&--button{
+							margin: px2rem(10);
+							align-self: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -6,6 +6,13 @@
 }
 
 @font-face {
+  font-family: 'SF Pro Text Light';
+  src: url('../fonts/sfpro/SFProText-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'SF Pro Text Regular';
   src: url('../fonts/sfpro/SFProText-Regular.ttf') format('truetype');
   font-weight: 400;

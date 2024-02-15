@@ -1,17 +1,11 @@
 @import "grid/init";
 @import "variables";
 @import "fonts";
-
-body{
-  font-size: 1rem;
-  line-height: 1.2;
-  font-family: 'SF Pro Text Regular';
-  color: $text-color;
-  background-color: $body-bg-color;
-}
-
+@import "global";
 @import "buttons";
+
 @import "debug";
+
 @import "sections/header";
 @import "sections/intro";
 @import "sections/achievements";
@@ -24,3 +18,4 @@ body{
 @import "sections/footer";
 
 @import "sections/oneService";
+@import "sections/faq";

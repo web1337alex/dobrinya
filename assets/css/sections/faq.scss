@@ -1,0 +1,113 @@
+@include bp(xs){
+	.faqSec{
+		&__title{
+			font-size: px2rem(30);
+			line-height: px2rem(30);
+			margin-bottom: px2rem(34);
+		}
+		&__items{
+			&--item{
+				margin-bottom: px2rem(13);
+				border: px2rem(1) solid $faq-item-border-color;
+				border-radius: px2rem(40);
+				padding: px2rem(36) px2rem(24);
+				background-color: $faq-item-bg;
+
+				&--title{
+					display: flex;
+					align-items: center;
+					font-size: px2rem(30);
+					line-height: px2rem(30);
+					font-family: 'Izhitsa';
+					color: $text-color;
+					position: relative;
+					cursor: pointer;
+					&::before{
+						content: '';
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: px2rem(46);
+						height: px2rem(46);
+						margin-right: px2rem(15);
+						border-radius: 50%;
+						border: px2rem(1) solid $faq-item-title-marker-border;
+						background-color: $faq-item-title-marker-bg;
+					}
+					&::after{
+						content: '';
+						display: block;
+						position: absolute;
+						width: px2rem(18);
+						height: px2rem(20);
+						top: px2rem(13);
+						left: px2rem(14);
+						mask-image: url("../images/plus.svg");
+						-webkit-mask-image: url("../images/plus.svg");
+						mask-repeat: no-repeat;
+						mask-size: contain;
+						mask-position: center;
+						-webkit-mask-repeat: no-repeat;
+						-webkit-mask-size: contain;
+						-webkit-mask-position: center;
+						background-color: $text-color;
+					}
+				}
+				&--text{
+					max-height: 0;
+					opacity: 0;
+					color: $color-text-light;
+					font-size: px2rem(30);
+					line-height: px2rem(34);
+				}
+			}
+
+			&--item.active > .faqSec__items--item--title::after{
+				mask-image: url("../images/minus.svg");
+				-webkit-mask-image: url("../images/minus.svg");
+			}
+
+			&--item.active > .faqSec__items--item--text{
+				opacity: 1;
+				max-height: unset;
+				padding-top: px2rem(24);
+			}
+		}
+	}
+}
+
+@include bp(md) {
+	.faqSec {
+		&__title {
+			font-size: px2rem(45);
+			line-height: px2rem(45);
+			margin-bottom: px2rem(57);
+		}
+		&__items {
+			&--item {
+				border-radius: px2rem(61);
+				padding: px2rem(45);
+				margin-bottom: px2rem(35);
+				&--title{
+					font-size: px2rem(45);
+					line-height: px2rem(45);
+					&::before{
+						width: px2rem(96);
+						height: px2rem(96);
+						margin-right: px2rem(40);
+					}
+					&::after{
+						width: px2rem(40);
+						height: px2rem(45);
+						top: px2rem(26);
+						left: px2rem(28);
+					}
+				}
+				&--text{
+					font-size: px2rem(30);
+					line-height: px2rem(35);
+				}
+			}
+		}
+	}
+}

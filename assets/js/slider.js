@@ -121,35 +121,38 @@ class Carousel {
     }
 
     init() {
-        this.slides = this.carouselElement.querySelectorAll('.carousel__slide');
-        this.totalSlides = this.slides.length;
-        this.slidesToShow = this.calculateSlidesToShow();
-        this.calculateTotalGroups();
-        this.currentSlide = 0;
+        let check = document.querySelectorAll('.carousel__slides');
+        if (check.length) {
+            this.slides = this.carouselElement.querySelectorAll('.carousel__slide');
+            this.totalSlides = this.slides.length;
+            this.slidesToShow = this.calculateSlidesToShow();
+            this.calculateTotalGroups();
+            this.currentSlide = 0;
 
-        if (this.options.arrows) {
-            const leftButton = document.createElement('button');
-            leftButton.className = 'carousel__button carousel__button--left';
-            leftButton.innerHTML = '&#10094;';
+            if (this.options.arrows) {
+                const leftButton = document.createElement('button');
+                leftButton.className = 'carousel__button carousel__button--left';
+                leftButton.innerHTML = '&#10094;';
 
-            const rightButton = document.createElement('button');
-            rightButton.className = 'carousel__button carousel__button--right';
-            rightButton.innerHTML = '&#10095;';
+                const rightButton = document.createElement('button');
+                rightButton.className = 'carousel__button carousel__button--right';
+                rightButton.innerHTML = '&#10095;';
 
-            this.carouselElement.appendChild(leftButton);
-            this.carouselElement.appendChild(rightButton);
+                this.carouselElement.appendChild(leftButton);
+                this.carouselElement.appendChild(rightButton);
 
-            this.leftClickHandler = () => this.moveSlide(-1);
-            this.rightClickHandler = () => this.moveSlide(1);
+                this.leftClickHandler = () => this.moveSlide(-1);
+                this.rightClickHandler = () => this.moveSlide(1);
 
-            leftButton.addEventListener('click', this.leftClickHandler);
-            rightButton.addEventListener('click', this.rightClickHandler);
+                leftButton.addEventListener('click', this.leftClickHandler);
+                rightButton.addEventListener('click', this.rightClickHandler);
+            }
+
+            this.createIndicators();
+            this.updateCarousel();
+
+            this.carouselElement.addEventListener('touchstart', this.handleTouchStart);
+            this.carouselElement.addEventListener('mousedown', this.handleTouchStart);
         }
-
-        this.createIndicators();
-        this.updateCarousel();
-
-        this.carouselElement.addEventListener('touchstart', this.handleTouchStart);
-        this.carouselElement.addEventListener('mousedown', this.handleTouchStart);
-    }
+        }
 }

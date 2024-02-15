@@ -789,6 +789,40 @@ body {
   background-color: #FFFFFC;
 }
 
+@media (min-width: 0) {
+  .secBg {
+    padding-top: 1.875rem;
+    padding-bottom: 3.75rem;
+    position: relative;
+  }
+  .secBg > *:not(.secBg::before) {
+    z-index: 1;
+  }
+  .secBg::before {
+    content: "";
+    display: block;
+    z-index: -1;
+    aspect-ratio: 1/1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: url("../images/achievements-bg.svg");
+    transform: scale(1, -1);
+    opacity: 0.5;
+  }
+  .secBg::before {
+    width: 50%;
+  }
+}
+@media (min-width: 48rem) {
+  .secBg {
+    padding-top: 7.1875rem;
+    padding-bottom: 6.6875rem;
+  }
+  .secBg::before {
+    width: 25%;
+  }
+}
 .button {
   display: flex;
   justify-content: center;
@@ -2455,29 +2489,6 @@ body {
   }
 }
 @media (min-width: 0) {
-  .oneService {
-    padding-top: 1.875rem;
-    padding-bottom: 3.75rem;
-    position: relative;
-  }
-  .oneService > *:not(.oneService::before) {
-    z-index: 1;
-  }
-  .oneService::before {
-    content: "";
-    display: block;
-    z-index: -1;
-    aspect-ratio: 1/1;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background-image: url("../images/achievements-bg.svg");
-    transform: scale(1, -1);
-    opacity: 0.7;
-  }
-  .oneService::before {
-    width: 50%;
-  }
   .oneService__content > div {
     width: 100%;
   }
@@ -2572,13 +2583,6 @@ body {
   }
 }
 @media (min-width: 48rem) {
-  .oneService {
-    padding-top: 7.1875rem;
-    padding-bottom: 6.6875rem;
-  }
-  .oneService::before {
-    width: 25%;
-  }
   .oneService__content--image {
     aspect-ratio: 1220/397;
     border-radius: 5.0625rem;
@@ -2615,6 +2619,107 @@ body {
   }
   .oneService__content--info--list--item {
     margin-bottom: 1.9375rem;
+  }
+}
+@media (min-width: 0) {
+  .faqSec__title {
+    font-size: 1.875rem;
+    line-height: 1.875rem;
+    margin-bottom: 2.125rem;
+  }
+  .faqSec__items--item {
+    margin-bottom: 0.8125rem;
+    border: 0.0625rem solid rgb(224, 224, 224);
+    border-radius: 2.5rem;
+    padding: 2.25rem 1.5rem;
+    background-color: rgb(246, 246, 246);
+  }
+  .faqSec__items--item--title {
+    display: flex;
+    align-items: center;
+    font-size: 1.875rem;
+    line-height: 1.875rem;
+    font-family: "Izhitsa";
+    color: rgb(0, 0, 0);
+    position: relative;
+    cursor: pointer;
+  }
+  .faqSec__items--item--title::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.875rem;
+    height: 2.875rem;
+    margin-right: 0.9375rem;
+    border-radius: 50%;
+    border: 0.0625rem solid rgb(198, 198, 198);
+    background-color: rgb(238, 238, 238);
+  }
+  .faqSec__items--item--title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1.125rem;
+    height: 1.25rem;
+    top: 0.8125rem;
+    left: 0.875rem;
+    mask-image: url("../images/plus.svg");
+    -webkit-mask-image: url("../images/plus.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+    background-color: rgb(0, 0, 0);
+  }
+  .faqSec__items--item--text {
+    max-height: 0;
+    opacity: 0;
+    color: rgb(103, 103, 103);
+    font-size: 1.875rem;
+    line-height: 2.125rem;
+  }
+  .faqSec__items--item.active > .faqSec__items--item--title::after {
+    mask-image: url("../images/minus.svg");
+    -webkit-mask-image: url("../images/minus.svg");
+  }
+  .faqSec__items--item.active > .faqSec__items--item--text {
+    opacity: 1;
+    max-height: unset;
+    padding-top: 1.5rem;
+  }
+}
+@media (min-width: 48rem) {
+  .faqSec__title {
+    font-size: 2.8125rem;
+    line-height: 2.8125rem;
+    margin-bottom: 3.5625rem;
+  }
+  .faqSec__items--item {
+    border-radius: 3.8125rem;
+    padding: 2.8125rem;
+    margin-bottom: 2.1875rem;
+  }
+  .faqSec__items--item--title {
+    font-size: 2.8125rem;
+    line-height: 2.8125rem;
+  }
+  .faqSec__items--item--title::before {
+    width: 6rem;
+    height: 6rem;
+    margin-right: 2.5rem;
+  }
+  .faqSec__items--item--title::after {
+    width: 2.5rem;
+    height: 2.8125rem;
+    top: 1.625rem;
+    left: 1.75rem;
+  }
+  .faqSec__items--item--text {
+    font-size: 1.875rem;
+    line-height: 2.1875rem;
   }
 }
 

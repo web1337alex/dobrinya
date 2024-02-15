@@ -69,3 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.querySelectorAll('.faqSec__items--item--title').forEach(item => {
+    item.addEventListener('click', function() {
+        item.closest('.faqSec__items--item').classList.toggle('active');
+    });
+});
+

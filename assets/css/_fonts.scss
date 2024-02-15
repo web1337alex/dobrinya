@@ -53,6 +53,9 @@
 
 .h1, .h2{
   font-family: 'Izhitsa';
+  background-image: $title-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   & > span{
     color: $first-accent-color;
   }
@@ -63,9 +66,6 @@
   .h1{
     font-size: px2rem(50);
     line-height: px2rem(50.39);
-    background-image: $title-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 
   .h2{

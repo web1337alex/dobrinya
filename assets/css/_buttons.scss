@@ -10,6 +10,56 @@
 	padding-bottom: px2rem(11);
 	font-size: px2rem(12);
 	line-height: px2rem(14.4);
+	position: relative;
+
+	& > .label{
+		display: flex;
+		align-items: center;
+		font-size: px2rem(14);
+		line-height: px2rem(16.8);
+		position: absolute;
+		right: px2rem(-35);
+		top: px2rem(-10);
+		font-family: "SF Pro Text Medium";
+		background-color: #ffffff;
+		box-shadow: $label-box-shadow;
+		border-radius: px2rem(8);
+		transform: rotate(6.11deg);
+		text-transform: none;
+		padding: px2rem(5);
+
+		&::before{
+			content: "";
+			border-radius: px2rem(3);
+			width: px2rem(8);
+			height: px2rem(8);
+			background-color: red;
+			margin-right: px2rem(3);
+		}
+	}
+
+	&.open > .label::before{
+		background-color: $green-label-bg;
+	}
+
+	&.close > .label::before{
+		background-color: $red-label-bg;
+	}
+
+	&.open > .label > span{
+		background: $green-gradient;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+
+	&.close > .label > span{
+		background: $red-gradient;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+
 }
 
 .button.btn-border{

@@ -7,6 +7,20 @@
 @include bp(md){
 	.reviews{
 		display: block;
+		position: relative;
+		&::before{
+			content: "";
+			display: block;
+			position: absolute;
+			width: 25%;
+			aspect-ratio: 1 / 1;
+			bottom: 0;
+			transform: scale(-1, 1);
+			right: 0;
+			z-index: -1;
+			background-image: url("../images/achievements-bg.svg");
+			opacity: 0.7;
+		}
 
 		& > section{
 			width: 100%;

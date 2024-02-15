@@ -5,6 +5,7 @@
     padding-bottom: px2rem(12);
     position: relative;
     background-color: $default-light-color;
+    box-shadow: $header-box-shadow;
 
     &__box{
       display: flex;

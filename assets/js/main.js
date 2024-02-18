@@ -76,3 +76,12 @@ document.querySelectorAll('.faqSec__items--item--title').forEach(item => {
     });
 });
 
+
+
+
+
+
+
+
+
+

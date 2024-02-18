@@ -6,6 +6,10 @@ body{
 	background-color: $body-bg-color;
 }
 
+body.lock{
+	overflow: hidden;
+}
+
 @include bp(xs){
 	.secBg{
 		padding-top: px2rem(30);

@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             tabsContainer.addEventListener('click', function(e) {
                 const target = e.target.closest('.tab-item'); // Используем closest для увеличения гибкости
                 if (target) {
+
                     const dataItem = target.getAttribute('data-item');
                     const tabItems = document.querySelectorAll('.tab__container .tab-item');
                     const tabContents = document.querySelectorAll('.tab__container .tab-content');

@@ -1,0 +1,15 @@
+@include bp(xs){
+	.servicesList{
+		&__container{
+			margin-top: px2rem(40);
+		}
+	}
+}
+
+@include bp(md){
+	.servicesList{
+		&__container{
+			margin-top: px2rem(110);
+		}
+	}
+}

@@ -10,6 +10,10 @@
     @include container($container-big-width);
 }
 
+.container-medium{
+    @include container($container-medium-width);
+}
+
 .row{
     @include row();
 }

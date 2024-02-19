@@ -76,3 +76,33 @@
 		color: $green-light;
 	}
 }
+
+.button.load{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: px2rem(9);
+	border: px2rem(1) solid $text-color;
+	background-color: $default-light-color;
+	color: $text-color;
+	font-size: px2rem(12);
+	line-height: px2rem(14.4);
+	text-align: center;
+	padding: px2rem(11);
+	width: 100%;
+	&:after{
+		content: "";
+		height: px2rem(14);
+		width: px2rem(9);
+		background-color: $text-color;
+		margin-left: px2rem(13);
+		mask-image: url("../images/bottom-arrow.svg");
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: center;
+		-webkit-mask-image: url("../images/bottom-arrow.svg");
+		-webkit-mask-size: contain;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+	}
+}

@@ -81,15 +81,105 @@
         </div>
     </header>
 
-    <section class="secBg tabSearch servicesList">
-        <div class="container">
+    <section class="secBg services tabSearch tab__container servicesList">
+        <div class="container-medium ">
             <div class="row servicesList__panel tabSearch__panel">
-                <div class="col-xs-12 col-md-3 servicesList__panel--search tabSearch__panel--search">
-
+                <div class="col-xs-12 col-md-2 servicesList__panel--search tabSearch__panel--search">
+                    <div class="tabSearch__panel--search--box">
+                        <input type="text" class="tabSearch__panel--search--box--input" placeholder="Поиск...">
+                    </div>
                 </div>
-                <div class="col-xs-12 col-md-9 servicesList__panel--tabItems tabSearch__panel--tabItems">
-
+                <div class="col-xs-12 col-md-10 servicesList__panel--tabItems tabSearch__panel--tabItems">
+                    <div class="servicesList__panel--tabItems--item tabSearch__panel--tabItems--item tab-item active" data-item="1">Все</div>
+                    <div class="servicesList__panel--tabItems--item tabSearch__panel--tabItems--item tab-item" data-item="2">Онлайн консультации</div>
+                    <div class="servicesList__panel--tabItems--item tabSearch__panel--tabItems--item tab-item" data-item="3">По скидке</div>
+                    <div class="servicesList__panel--tabItems--item tabSearch__panel--tabItems--item tab-item" data-item="4">Общая стоматология</div>
+                    <div class="servicesList__panel--tabItems--item tabSearch__panel--tabItems--item tab-item" data-item="5">Ортодонтия</div>
+                    <div class="servicesList__panel--tabItems--item tabSearch__panel--tabItems--item tab-item" data-item="6">Хирургия</div>
+                    <div class="servicesList__panel--tabItems--item tabSearch__panel--tabItems--item tab-item" data-item="7">Профилактика</div>
+                    <div class="servicesList__panel--tabItems--item tabSearch__panel--tabItems--item tab-item" data-item="8">Детская стоматология</div>
+                    <div class="servicesList__panel--tabItems--item tabSearch__panel--tabItems--item tab-item" data-item="9">...</div>
                 </div>
+            </div>
+        </div>
+        <div class="container servicesList__container">
+            <div class="row tabSearch__row servicesList__row services__list tab-content active" data-tab="1">
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/1.svg'); mask-image: url('assets/images/services-icons/1.svg');"></div>
+                    <p class="services__list--item--title">Онлайн консультация</p>
+                    <div class="services__list--item--text">Получите советы и рекомендации по устному здоровью из дома.</div>
+                </a>
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/2.svg'); mask-image: url('assets/images/services-icons/2.svg')"></div>
+                    <p class="services__list--item--title">Лечение кариеса</p>
+                    <div class="services__list--item--text">Комплексное лечение и восстановление поврежденных зубов.</div>
+                </a>
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/3.svg'); mask-image: url('assets/images/services-icons/3.svg')"></div>
+                    <p class="services__list--item--title">Имплантация зубов</p>
+                    <div class="services__list--item--text">Замена потерянных зубов высокотехнологичными имплантами.</div>
+                </a>
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/4.svg'); mask-image: url('assets/images/services-icons/4.svg')"></div>
+                    <p class="services__list--item--title">Ортодонтия</p>
+                    <div class="services__list--item--text">Процедура, которая поможет вам получить белоснежную улыбку.</div>
+                </a>
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/5.svg'); mask-image: url('assets/images/services-icons/5.svg')"></div>
+                    <p class="services__list--item--title">Эстетическая реставрация</p>
+                    <div class="services__list--item--text">Восстановление формы и цвета зубов.</div>
+                </a>
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/6.svg'); mask-image: url('assets/images/services-icons/6.svg')"></div>
+                    <p class="services__list--item--title">Эндодонтия</p>
+                    <div class="services__list--item--text">Лечение корневых каналов для спасения зубов.</div>
+                </a>
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/7.svg'); mask-image: url('assets/images/services-icons/7.svg')"></div>
+                    <p class="services__list--item--title">Профессиональное отбеливание</p>
+                    <div class="services__list--item--text">Осветление зубов для белоснежной улыбки.</div>
+                </a>
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/8.svg'); mask-image: url('assets/images/services-icons/8.svg')"></div>
+                    <p class="services__list--item--title">Пародонтология</p>
+                    <div class="services__list--item--text">Лечение десен и поддержание их здоровья.</div>
+                </a>
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/9.svg'); mask-image: url('assets/images/services-icons/9.svg')"></div>
+                    <p class="services__list--item--title">Детская стоматология</p>
+                    <div class="services__list--item--text">Заботливое лечение для детей и подростков.</div>
+                </a>
+                <div class="col-xs-12 services__list--button">
+                    <div class="button load">Загрузить еще</div>
+                </div>
+            </div>
+            <div class="row tabSearch__row servicesList__row services__list tab-content" data-tab="2">
+                <a class="col-fg-md-1 col-xs-12 services__list--item">
+                    <div class="services__list--item--icon" style="-webkit-mask-image: url('assets/images/services-icons/1.svg'); mask-image: url('assets/images/services-icons/1.svg');"></div>
+                    <p class="services__list--item--title">Онлайн консультация</p>
+                    <div class="services__list--item--text">Получите советы и рекомендации по устному здоровью из дома.</div>
+                </a>
+            </div>
+            <div class="row tabSearch__row servicesList__row services__list tab-content" data-tab="3">
+                <h1 class="h1">Вкладка 3</h1>
+            </div>
+            <div class="row tabSearch__row servicesList__row services__list tab-content" data-tab="4">
+                <h1 class="h1">Вкладка 4</h1>
+            </div>
+            <div class="row tabSearch__row servicesList__row services__list tab-content" data-tab="5">
+                <h1 class="h1">Вкладка 5</h1>
+            </div>
+            <div class="row tabSearch__row servicesList__row services__list tab-content" data-tab="6">
+                <h1 class="h1">Вкладка 6</h1>
+            </div>
+            <div class="row tabSearch__row servicesList__row services__list tab-content" data-tab="7">
+                <h1 class="h1">Вкладка 7</h1>
+            </div>
+            <div class="row tabSearch__row servicesList__row services__list tab-content" data-tab="8">
+                <h1 class="h1">Вкладка 8</h1>
+            </div>
+            <div class="row tabSearch__row servicesList__row services__list tab-content" data-tab="9">
+                <h1 class="h1">Вкладка 9</h1>
             </div>
         </div>
     </section>

@@ -1,0 +1,99 @@
+@include bp(xs){
+
+	.tabSearch{
+
+		&__panel{
+
+			&--search{
+				display: flex;
+				align-items: center;
+				border-radius: px2rem(19);
+				border: px2rem(1) solid $input-tab-input-border;
+				overflow: hidden;
+				background-color: $default-light-color;
+
+				&::before{
+					content: '';
+					display: block;
+					width: px2rem(14);
+					height: px2rem(16);
+					margin-right: px2rem(6);
+					margin-left: px2rem(12);
+					background-color: $text-color;
+					mask-size: contain;
+					mask-position: center;
+					mask-repeat: no-repeat;
+					mask-image: url("../images/search.svg");
+					-webkit-mask-size: contain;
+					-webkit-mask-position: center;
+					-webkit-mask-repeat: no-repeat;
+					-webkit-mask-image: url("../images/search.svg");
+				}
+				input{
+					font-family: 'SF Pro Text Regular', serif;
+					height: 100%;
+					padding: px2rem(10) px2rem(12);
+					border: none;
+					font-size: px2rem(16);
+					line-height: 1;
+					color: $input-tab-input-color;
+				}
+			}
+
+			&--tabItems{
+				display: flex;
+				justify-content: space-between;
+				overflow-x: auto;
+				margin-top: px2rem(8);
+				&--item{
+					border: px2rem(1) solid $input-tab-input-border;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					padding: px2rem(10) px2rem(12);
+					border-radius: px2rem(19);
+					background-color: $default-light-color;
+					cursor: pointer;
+					line-height: 1;
+					font-size: px2rem(16);
+					white-space: nowrap;
+					transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+					&.active, &:hover{
+						background-color: $first-accent-color;
+						color: $default-light-color;
+					}
+					&:not(:last-child){
+						margin-right: px2rem(10);
+					}
+				}
+			}
+
+		}
+
+		&__row{
+			display: none;
+			&.active{
+				display: flex;
+			}
+		}
+	}
+
+}
+
+@include bp(md){
+
+	.tabSearch{
+
+		&__panel{
+
+			&--tabItems{
+
+				&--item{
+					margin-right: 0;
+				}
+			}
+
+		}
+
+	}
+}

@@ -206,4 +206,50 @@
 }
 
 
+@include bp(md){
+	.team{
+
+		&-1 .team__list{
+			aspect-ratio: unset;
+		}
+
+		&-1 .grid-container{
+			display: flex;
+			gap: unset;
+		}
+
+		&-1 .carousel__button{
+			background-color: $default-light-color;
+			top: calc(50% - 2.25rem);
+		}
+
+		&-1 .team__list--card{
+			@include col(6, 12);
+			border-radius: 1.5625rem;
+			background-position: center;
+			background-size: cover;
+			margin: 0 px2rem(10);
+			min-height: px2rem(300);
+		}
+
+		&-1 .team__list--card--content{
+			display: flex;
+			justify-content: center;
+		}
+
+		&-1 .team__list--card--content > *{
+			width: 100%;
+			text-align: center;
+		}
+
+		&-1 .team__list--card--content--text{
+			font-size: px2rem(14);
+			line-height: px2rem(16);
+			margin: px2rem(10) 0;
+		}
+
+	}
+}
+
+
 

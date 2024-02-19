@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-new Carousel(document.querySelector(".team__list"), {0: 2, 768: 3}, {arrows: false, nav: true});
+new Carousel(document.querySelector(".team__list-1"), {0: 2, 768: 3}, {arrows: false, nav: true});
+new Carousel(document.querySelector(".team__list-2"), {0: 2, 768: 2}, {arrows: true, nav: true});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Получаем контейнер для .reviews__box--row и прокручиваем его к середине

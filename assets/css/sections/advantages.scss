@@ -112,14 +112,14 @@
 		@include common-advantages-styles;
 
 		.h1 {
-			font-size: px2rem(50);
-			line-height: px2rem(50);
+			font-size: px2rem(30);
+			line-height: px2rem(30);
 			text-align: center;
 			background: $title-gradient;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
-			margin-bottom: px2rem(64);
-			word-break: break-all;
+			margin-bottom: px2rem(102);
+			padding: 0 px2rem(30);
 		}
 
 		&__items--item {

@@ -50,9 +50,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-new Carousel(document.querySelector(".team__list-1"), {0: 2, 768: 3}, {arrows: false, nav: true});
-new Carousel(document.querySelector(".team__list-2"), {0: 2, 768: 2}, {arrows: true, nav: true});
+let teamList1 = document.querySelector(".team__list-1");
+let teamList2 = document.querySelector(".team__list-2");
+if (teamList1) {
+    new Carousel(teamList1, {0: 2, 768: 2}, {arrows: false, nav: true});
+}
+if (teamList2) {
+    new Carousel(teamList2, {0: 2, 768: 2}, {arrows: true, nav: true});
+}
 
+let workListItemSliders = document.querySelectorAll(".workList__row--item--slider");
+if(workListItemSliders.length > 0){
+    workListItemSliders.forEach(workListItemSlider => {
+        new Carousel(workListItemSlider, {0: 1}, {arrows: true, nav: false});
+    });
+}
 document.addEventListener('DOMContentLoaded', () => {
     // Получаем контейнер для .reviews__box--row и прокручиваем его к середине
     let reviewsContainer = document.querySelector('.reviews__box--container');

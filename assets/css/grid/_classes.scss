@@ -54,6 +54,21 @@
             .block-#{$lib}#{$bp} {
                 display: block !important;
             }
+            .inline-#{$lib}#{$bp} {
+                display: inline !important;
+            }
+            .row-reverse-#{$lib}#{$bp} {
+                flex-direction: row-reverse !important;
+            }
+            .col-reverse-#{$lib}#{$bp} {
+                flex-direction: column-reverse !important;
+            }
+            .row-force-#{$lib}#{$bp} {
+                flex-direction: row !important;
+            }
+            .col-force-#{$lib}#{$bp} {
+                flex-direction: column !important;
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ class Carousel {
             nav: true
         };
 
-        this.options = {...defaultOptions, ...options};
+        this.options = { ...defaultOptions, ...options };
         this.carouselElement = element;
         this.configuration = configuration;
 
@@ -18,12 +18,14 @@ class Carousel {
 
         this.startX = 0;
         this.currentX = 0;
+        this.isTouching = false;
 
         this.init();
     }
 
     onWindowResize() {
-        this.init();
+        this.slidesToShow = this.calculateSlidesToShow();
+        this.updateCarousel();
     }
 
     calculateSlidesToShow() {
@@ -50,9 +52,11 @@ class Carousel {
 
             this.indicatorsContainer = document.createElement('div');
             this.indicatorsContainer.className = 'carousel__indicators';
+            this.indicatorsContainer.setAttribute('aria-label', 'Carousel Navigation');
 
             for (let i = 0; i < this.totalGroups; i++) {
-                const indicator = document.createElement('div');
+                const indicator = document.createElement('button');
+                indicator.setAttribute('aria-label', `Go to slide ${i + 1}`);
                 indicator.classList.add('carousel__indicator');
                 if (i === 0) indicator.classList.add('carousel__indicator--active');
                 indicator.addEventListener('click', () => this.moveToGroup(i));
@@ -67,7 +71,7 @@ class Carousel {
         if (this.options.nav) {
             const indicators = this.indicatorsContainer.querySelectorAll('.carousel__indicator');
             indicators.forEach((indicator, index) => {
-                if (index === this.currentSlide / this.slidesToShow) {
+                if (index === Math.floor(this.currentSlide / this.slidesToShow)) {
                     indicator.classList.add('carousel__indicator--active');
                 } else {
                     indicator.classList.remove('carousel__indicator--active');
@@ -83,13 +87,11 @@ class Carousel {
     }
 
     moveSlide(direction) {
-        this.slidesToShow = this.calculateSlidesToShow();
         this.currentSlide = (this.currentSlide + direction * this.slidesToShow + this.totalSlides) % this.totalSlides;
         this.updateCarousel();
     }
 
     moveToGroup(groupIndex) {
-        this.slidesToShow = this.calculateSlidesToShow();
         this.currentSlide = groupIndex * this.slidesToShow;
         this.updateCarousel();
     }
@@ -97,22 +99,28 @@ class Carousel {
     handleTouchStart(event) {
         this.startX = event.touches ? event.touches[0].pageX : event.pageX;
         this.currentX = this.startX;
+        this.isTouching = true;
 
-        this.carouselElement.addEventListener('touchmove', this.handleTouchMove);
-        this.carouselElement.addEventListener('touchend', this.handleTouchEnd);
-        this.carouselElement.addEventListener('mousemove', this.handleTouchMove);
-        this.carouselElement.addEventListener('mouseup', this.handleTouchEnd);
+        document.addEventListener('touchmove', this.handleTouchMove, { passive: false });
+        document.addEventListener('touchend', this.handleTouchEnd, { passive: false });
+        document.addEventListener('mousemove', this.handleTouchMove);
+        document.addEventListener('mouseup', this.handleTouchEnd);
     }
 
     handleTouchMove(event) {
+        if (!this.isTouching) return;
         this.currentX = event.touches ? event.touches[0].pageX : event.pageX;
+        event.preventDefault(); // Prevent scrolling when touching
     }
 
     handleTouchEnd(event) {
-        this.carouselElement.removeEventListener('touchmove', this.handleTouchMove);
-        this.carouselElement.removeEventListener('touchend', this.handleTouchEnd);
-        this.carouselElement.removeEventListener('mousemove', this.handleTouchMove);
-        this.carouselElement.removeEventListener('mouseup', this.handleTouchEnd);
+        if (!this.isTouching) return;
+        this.isTouching = false;
+
+        document.removeEventListener('touchmove', this.handleTouchMove);
+        document.removeEventListener('touchend', this.handleTouchEnd);
+        document.removeEventListener('mousemove', this.handleTouchMove);
+        document.removeEventListener('mouseup', this.handleTouchEnd);
 
         let shift = this.startX - this.currentX;
         if (Math.abs(shift) > 30) {
@@ -121,8 +129,8 @@ class Carousel {
     }
 
     init() {
-        let check = document.querySelectorAll('.carousel__slides');
-        if (check.length) {
+        let check = this.carouselElement.querySelector('.carousel__slides');
+        if (check) {
             this.slides = this.carouselElement.querySelectorAll('.carousel__slide');
             this.totalSlides = this.slides.length;
             this.slidesToShow = this.calculateSlidesToShow();
@@ -132,10 +140,12 @@ class Carousel {
             if (this.options.arrows) {
                 const leftButton = document.createElement('button');
                 leftButton.className = 'carousel__button carousel__button--left';
+                leftButton.setAttribute('aria-label', 'Previous slide');
                 leftButton.innerHTML = '&#10094;';
 
                 const rightButton = document.createElement('button');
                 rightButton.className = 'carousel__button carousel__button--right';
+                rightButton.setAttribute('aria-label', 'Next slide');
                 rightButton.innerHTML = '&#10095;';
 
                 this.carouselElement.appendChild(leftButton);
@@ -151,8 +161,35 @@ class Carousel {
             this.createIndicators();
             this.updateCarousel();
 
-            this.carouselElement.addEventListener('touchstart', this.handleTouchStart);
+            this.carouselElement.addEventListener('touchstart', this.handleTouchStart, { passive: true });
             this.carouselElement.addEventListener('mousedown', this.handleTouchStart);
         }
+    }
+
+    // New method to safely destroy the carousel instance
+    destroy() {
+        window.removeEventListener("resize", this.resizeHandler);
+        this.carouselElement.removeEventListener('touchstart', this.handleTouchStart);
+        this.carouselElement.removeEventListener('mousedown', this.handleTouchStart);
+
+        // Удаление обработчиков для кнопок, если они были созданы
+        if (this.options.arrows) {
+            const leftButton = this.carouselElement.querySelector('.carousel__button--left');
+            const rightButton = this.carouselElement.querySelector('.carousel__button--right');
+            if (leftButton) leftButton.removeEventListener('click', this.leftClickHandler);
+            if (rightButton) rightButton.removeEventListener('click', this.rightClickHandler);
         }
+
+        // Очистка созданных динамически элементов индикаторов и кнопок
+        if (this.indicatorsContainer) {
+            this.indicatorsContainer.remove();
+        }
+        const arrows = this.carouselElement.querySelectorAll('.carousel__button');
+        arrows.forEach(arrow => arrow.remove());
+
+        // Очистка ссылок на DOM элементы для предотвращения утечек памяти
+        this.carouselElement = null;
+        this.slides = null;
+        this.indicatorsContainer = null;
+    }
 }

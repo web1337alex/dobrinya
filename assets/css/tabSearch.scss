@@ -76,6 +76,11 @@
 				display: flex;
 			}
 		}
+
+		&__title{
+			margin: px2rem(10) 0 px2rem(30) 0;
+		}
+
 	}
 
 }
@@ -93,6 +98,10 @@
 				}
 			}
 
+		}
+
+		&__title{
+			margin: px2rem(67) 0;
 		}
 
 	}

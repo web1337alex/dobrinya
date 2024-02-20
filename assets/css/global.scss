@@ -50,3 +50,10 @@ body.lock{
 		}
 	}
 }
+
+@include bp(xs){
+	.carousel__button{
+		background-color: $slider-arrows-bg;
+		color: $default-light-color;
+	}
+}

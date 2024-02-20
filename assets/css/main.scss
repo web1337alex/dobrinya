@@ -1,6 +1,7 @@
 @import "grid/init";
 @import "variables";
 @import "fonts";
+@import "sections/slider";
 @import "global";
 @import "tabSearch";
 @import "buttons";
@@ -11,10 +12,10 @@
 @import "sections/intro";
 @import "sections/achievements";
 @import "sections/advantages";
-@import "sections/slider";
 @import "sections/team";
 @import "sections/services";
 @import "sections/consult";
+
 @import "sections/reviews";
 @import "sections/footer";
 
@@ -22,3 +23,4 @@
 @import "sections/faq";
 @import "sections/contactsPage";
 @import "sections/servicesList";
+@import "sections/workList";

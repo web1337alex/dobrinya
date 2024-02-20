@@ -31,6 +31,8 @@
       background: unset;
       -webkit-background-clip: unset;
       -webkit-text-fill-color: unset;
+      font-size: px2rem(35);
+      line-height: 1.2;
     }
 
     &__card {
@@ -115,6 +117,10 @@
 @include bp(md){
   .intro{
     aspect-ratio: 1920 / 662;
+    .h1{
+      font-size: px2rem(50);
+      line-height: px2rem(50.39);
+    }
     &--text {
       font-size: px2rem(14);
       line-height: px2rem(16.8);

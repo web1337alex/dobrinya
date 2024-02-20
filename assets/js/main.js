@@ -1,10 +1,10 @@
 document.querySelector(".header__burger--icon").addEventListener("click", function () {
-  document.querySelector(".header__burger--icon").classList.toggle("active");
-  document.querySelector(".header__nav").classList.toggle("active");
-  document.querySelector("body").classList.toggle("lock");
+    document.querySelector(".header__burger--icon").classList.toggle("active");
+    document.querySelector(".header__nav").classList.toggle("active");
+    document.querySelector("body").classList.toggle("lock");
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Перенос заголовка для мобильных устройств
     const moveTitleForMobile = () => {
         const advantages = document.querySelector('.advantages');
@@ -31,13 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabsContainers = document.querySelectorAll('.tab__container');
     if (tabsContainers) {
         tabsContainers.forEach(tabsContainer => {
-            tabsContainer.addEventListener('click', function(e) {
+            tabsContainer.addEventListener('click', function (e) {
                 const target = e.target.closest('.tab-item'); // Используем closest для увеличения гибкости
                 if (target) {
 
                     const dataItem = target.getAttribute('data-item');
                     const tabItems = document.querySelectorAll('.tab__container .tab-item');
                     const tabContents = document.querySelectorAll('.tab__container .tab-content');
+
 
                     tabItems.forEach(item => item.classList.remove('active'));
                     tabContents.forEach(content => content.classList.remove('active'));
@@ -60,7 +61,7 @@ if (teamList2) {
 }
 
 let workListItemSliders = document.querySelectorAll(".workList__row--item--slider");
-if(workListItemSliders.length > 0){
+if (workListItemSliders.length > 0) {
     workListItemSliders.forEach(workListItemSlider => {
         new Carousel(workListItemSlider, {0: 1}, {arrows: true, nav: false});
     });
@@ -75,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Добавляем обработчики событий для стрелок прокрутки
     document.querySelectorAll('.reviews__box--arrow').forEach(arrow => {
-        arrow.addEventListener('click', function(e) {
+        arrow.addEventListener('click', function (e) {
             let scrollAmount = 70; // количество пикселей для прокрутки
             if (e.target.closest('.reviews__box--arrow').classList.contains('left')) {
                 reviewsContainer.scrollLeft -= scrollAmount;
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.querySelectorAll('.faqSec__items--item--title').forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
         item.closest('.faqSec__items--item').classList.toggle('active');
     });
 });

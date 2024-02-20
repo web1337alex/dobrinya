@@ -1019,6 +1019,7 @@ input {
   border-radius: 50%;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 .carousel__indicator--active {
   background-color: #98B23D;
@@ -2211,6 +2212,7 @@ body.lock {
   }
   .team-1 .carousel__button {
     background-color: #ffffff;
+    color: #98B23D;
     top: calc(50% - 2.25rem);
   }
   .team-1 .team__list--card {
@@ -3393,6 +3395,192 @@ body.lock {
     font-size: 1.375rem;
     line-height: 1.574375rem;
     color: rgb(103, 103, 103);
+  }
+}
+@media (min-width: 0) {
+  .ourTeam__hero--title {
+    font-size: 1.875rem;
+    line-height: 1;
+    margin-bottom: 2.625rem;
+  }
+  .ourTeam__hero--content--row--image {
+    border-radius: 25px;
+    aspect-ratio: 1/1;
+    margin-bottom: 1.125rem;
+    overflow: hidden;
+  }
+  .ourTeam__hero--content--row--image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .ourTeam__hero--content--row--text {
+    margin-bottom: 2rem;
+  }
+  .ourTeam__hero--content--row--text--title {
+    color: rgb(0, 0, 0);
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background: unset;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .ourTeam__hero--content--row--text > p {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.125rem;
+    line-height: 1.3425rem;
+  }
+  .ourTeam__personal--title {
+    font-size: 2.1875rem;
+    line-height: 2.1875rem;
+    margin-bottom: 1.75rem;
+  }
+  .ourTeam__personal--items--inner--row--item--title {
+    font-family: "SF Pro Text Bold", serif;
+    font-size: 1rem;
+    line-height: 1rem;
+    display: flex;
+  }
+  .ourTeam__personal--items--inner--row--item--title::before {
+    content: "\f0f0";
+    margin-right: 0.25rem;
+    width: 0.75rem;
+    height: 1rem;
+    mask-image: url("../images/doc-icon.png");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: rgb(0, 0, 0);
+    -webkit-mask: url("../images/doc-icon.png") center/contain no-repeat;
+  }
+  .ourTeam__personal--items--inner--row--item--position {
+    font-size: 0.875rem;
+    line-height: 1.044375rem;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 0.3125rem;
+    margin-bottom: 1.25rem;
+  }
+  .ourTeam__docs {
+    margin-top: 1.25rem;
+  }
+  .ourTeam__docs--title {
+    font-size: 2.1875rem;
+    line-height: 2.1875rem;
+    margin-bottom: 1.75rem;
+  }
+  .ourTeam__docs--container--row {
+    margin-top: 2.1875rem;
+  }
+  .ourTeam__docs--container--row--item:not(:first-child) {
+    margin-top: 1.875rem;
+  }
+  .ourTeam__docs--container--row--item--image {
+    aspect-ratio: 1/1;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1.5625rem;
+    margin-bottom: 0.6875rem;
+  }
+  .ourTeam__docs--container--row--item--title {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+    margin-bottom: 0.25rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  .ourTeam__docs--container--row--item--position {
+    font-size: 1.125rem;
+    line-height: 1.3125rem;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 0.6875rem;
+    text-align: center;
+  }
+  .ourTeam__docs--container--row--item--button {
+    padding: 0.3125rem 0.625rem;
+    border-radius: 0.5625rem;
+    font-family: "SF Pro Text Bold", serif;
+    text-transform: uppercase;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+  }
+  .ourTeam__docs--container--row--item--button::after {
+    display: none;
+  }
+  .ourTeam__docs--container--row--button {
+    margin-top: 2.1875rem;
+  }
+}
+@media (min-width: 48rem) {
+  .ourTeam__hero--title {
+    font-size: 2.8125rem;
+    margin-bottom: 2.8125rem;
+  }
+  .ourTeam__hero--content--row--image {
+    margin-bottom: 5.5625rem;
+  }
+  .ourTeam__hero--content--row--text--title {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .ourTeam__hero--content--row--text > p {
+    font-size: 1.125rem;
+    line-height: 1.3125rem;
+  }
+  .ourTeam__personal--title {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 4.3125rem;
+  }
+  .ourTeam__personal--items--inner--row--item--title {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+  }
+  .ourTeam__personal--items--inner--row--item--title::before {
+    margin-right: 0.375rem;
+    width: 1.4375rem;
+    height: 1.4375rem;
+  }
+  .ourTeam__personal--items--inner--row--item--position {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    margin-top: 0.375rem;
+    margin-bottom: 3.125rem;
+  }
+  .ourTeam__docs--title {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 1.875rem;
+  }
+  .ourTeam__docs--container--row {
+    margin-top: 2.5rem;
+  }
+  .ourTeam__docs--container--row--item {
+    padding: 0.9375rem;
+  }
+  .ourTeam__docs--container--row--item:not(:first-child) {
+    margin-top: 0;
+  }
+  .ourTeam__docs--container--row--item--image {
+    margin-bottom: 0.9375rem;
+  }
+  .ourTeam__docs--container--row--item--title {
+    font-size: 1.5625rem;
+    line-height: 1.875rem;
+    margin-bottom: 0.625rem;
+  }
+  .ourTeam__docs--container--row--item--position {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.9375rem;
+  }
+  .ourTeam__docs--container--row--item--button {
+    padding: 0.4375rem 0.75rem;
+    border-radius: 0.6875rem;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
   }
 }
 

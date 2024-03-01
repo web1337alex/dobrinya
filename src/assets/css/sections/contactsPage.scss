@@ -9,7 +9,7 @@
 			&--list{
 				margin-bottom: px2rem(30);
 				&--item{
-					font-size: px2rem(25);
+					font-size: px2rem(20);
 					line-height: px2rem(28.62);
 					margin-bottom: px2rem(16);
 					color: $color-text-light;
@@ -178,5 +178,12 @@
 				}
 			}
 		}
+	}
+}
+
+@include bp(null, md){
+	.contactsPage__content--list--item{
+		font-size: px2rem(18);
+		line-height: 1.2;
 	}
 }

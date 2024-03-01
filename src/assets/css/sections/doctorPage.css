@@ -1,3 +1,141 @@
+/* Error: Undefined mixin.
+ *     ,
+ * 1   | / @include bp(xs){
+ * 2   | |     .doctorPage{
+ * 3   | |         &__hero{
+ * 4   | |             margin-bottom: px2rem(17);
+ * 5   | |             &--image{
+ * 6   | |                 border-radius: px2rem(25);
+ * 7   | |                 margin-bottom: px2rem(17);
+ * 8   | |                 overflow: hidden;
+ * 9   | |                 aspect-ratio: 1/1;
+ * 10  | |                 img{
+ * 11  | |                     width: 100%;
+ * 12  | |                     height: 100%;
+ * 13  | |                     object-fit: cover;
+ * 14  | |                     object-position: center;
+ * 15  | |                 }
+ * 16  | |             }
+ * 17  | |             &--text{
+ * 18  | |                 &--title{
+ * 19  | |                     font-size: px2rem(45);
+ * 20  | |                     line-height: px2rem(45);
+ * 21  | |                     margin-bottom: px2rem(14);
+ * 22  | |                 }
+ * 23  | |                 &--content{
+ * 24  | |                     font-size: px2rem(25);
+ * 25  | |                     line-height: px2rem(28);
+ * 26  | |                     color: $color-text-light;
+ * 27  | |                 }
+ * 28  | |             }
+ * 29  | |         }
+ * 30  | |         &__info{
+ * 31  | |             &--title{
+ * 32  | |                 font-family: 'Izhitsa', sans-serif;
+ * 33  | |                 font-size: px2rem(35);
+ * 34  | |                 line-height: px2rem(35);
+ * 35  | |                 margin-bottom: px2rem(18);
+ * 36  | |             }
+ * 37  | |             &--list{
+ * 38  | |                 margin-bottom: px2rem(29);
+ * 39  | |                 &--item{
+ * 40  | |                     font-size: px2rem(25);
+ * 41  | |                     line-height: px2rem(28);
+ * 42  | |                     margin-bottom: px2rem(24);
+ * 43  | |                     color: $color-text-light;
+ * 44  | |                     display: block;
+ * 45  | |                     position: relative;
+ * 46  | |                     padding-left: px2rem(51);
+ * 47  | |                     &::before{
+ * 48  | |                         content: '';
+ * 49  | |                         position: absolute;
+ * 50  | |                         left: 0;
+ * 51  | |                         top: 0;
+ * 52  | |                         width: px2rem(30);
+ * 53  | |                         height: 100%;
+ * 54  | |                         background-color: $color-text-light;
+ * 55  | |                         margin-right: px2rem(21);
+ * 56  | |                         mask-size: contain;
+ * 57  | |                         mask-position: top;
+ * 58  | |                         mask-repeat: no-repeat;
+ * 59  | |                     }
+ * 60  | |                     &.special::before{
+ * 61  | |                         mask-image: url('../images/doctor-icons/special.svg');
+ * 62  | |                         -webkit-mask-image: url('../images/doctor-icons/special.svg');
+ * 63  | |                     }
+ * 64  | |                     &.age::before{
+ * 65  | |                         mask-image: url('../images/doctor-icons/age.svg');
+ * 66  | |                         -webkit-mask-image: url('../images/doctor-icons/age.svg');
+ * 67  | |                     }
+ * 68  | |                     &.position::before{
+ * 69  | |                         mask-image: url('../images/doctor-icons/position.svg');
+ * 70  | |                         -webkit-mask-image: url('../images/doctor-icons/position.svg');
+ * 71  | |                     }
+ * 72  | |                     &.category::before{
+ * 73  | |                         mask-image: url('../images/doctor-icons/category.svg');
+ * 74  | |                         -webkit-mask-image: url('../images/doctor-icons/category.svg');
+ * 75  | |                     }
+ * 76  | |                 }
+ * 77  | |             }
+ * 78  | |         }
+ * 79  | |         &__sertificatesTitle .h2{
+ * 80  | |             font-size: px2rem(35);
+ * 81  | |             line-height: px2rem(35);
+ * 82  | |             margin-bottom: px2rem(55);
+ * 83  | |         }
+ * 84  | |         &__sertificates{
+ * 85  | |             flex-wrap: nowrap;
+ * 86  | |             overflow-x: auto;
+ * 87  | |             &--item{
+ * 88  | | 
+ * 89  | |                 &--image{
+ * 90  | |                     width: 100%;
+ * 91  | |                     aspect-ratio: 1 / 1;
+ * 92  | |                     position: relative;
+ * 93  | |                     overflow: hidden;
+ * 94  | |                     border-radius: px2rem(27);
+ * 95  | |                     &:hover::after{
+ * 96  | |                         opacity: 1;
+ * 97  | |                     }
+ * 98  | |                     &::after{
+ * 99  | |                         content: '';
+ * 100 | |                         position: absolute;
+ * 101 | |                         top: 0;
+ * 102 | |                         left: 0;
+ * 103 | |                         width: 100%;
+ * 104 | |                         height: 100%;
+ * 105 | |                         background-image: $sert-gradient;
+ * 106 | |                         opacity: 0;
+ * 107 | |                         transition: opacity 0.3s ease-in-out;
+ * 108 | |                     }
+ * 109 | |                     img{
+ * 110 | |                         width: 100%;
+ * 111 | |                         aspect-ratio: 1 / 1;
+ * 112 | |                         object-fit: cover;
+ * 113 | |                     }
+ * 114 | |                 }
+ * 115 | | 
+ * 116 | |                 &--text{
+ * 117 | |                     font-size: px2rem(20);
+ * 118 | |                     line-height: px2rem(22);
+ * 119 | |                     text-align: center;
+ * 120 | |                     margin: px2rem(16) auto;
+ * 121 | |                     color: $color-text-light;
+ * 122 | |                 }
+ * 123 | |             }
+ * 124 | |         }
+ * 125 | |     }
+ * 126 | \ }
+ *     '
+ *   doctorPage.scss 1:1  root stylesheet */
 
-
-/*# sourceMappingURL=doctorPage.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a     \2577 \a 1   \2502  \250c  @include bp(xs){\a 2   \2502  \2502      .doctorPage{\a 3   \2502  \2502          &__hero{\a 4   \2502  \2502              margin-bottom: px2rem(17);\a 5   \2502  \2502              &--image{\a 6   \2502  \2502                  border-radius: px2rem(25);\a 7   \2502  \2502                  margin-bottom: px2rem(17);\a 8   \2502  \2502                  overflow: hidden;\a 9   \2502  \2502                  aspect-ratio: 1/1;\a 10  \2502  \2502                  img{\a 11  \2502  \2502                      width: 100%;\a 12  \2502  \2502                      height: 100%;\a 13  \2502  \2502                      object-fit: cover;\a 14  \2502  \2502                      object-position: center;\a 15  \2502  \2502                  }\a 16  \2502  \2502              }\a 17  \2502  \2502              &--text{\a 18  \2502  \2502                  &--title{\a 19  \2502  \2502                      font-size: px2rem(45);\a 20  \2502  \2502                      line-height: px2rem(45);\a 21  \2502  \2502                      margin-bottom: px2rem(14);\a 22  \2502  \2502                  }\a 23  \2502  \2502                  &--content{\a 24  \2502  \2502                      font-size: px2rem(25);\a 25  \2502  \2502                      line-height: px2rem(28);\a 26  \2502  \2502                      color: $color-text-light;\a 27  \2502  \2502                  }\a 28  \2502  \2502              }\a 29  \2502  \2502          }\a 30  \2502  \2502          &__info{\a 31  \2502  \2502              &--title{\a 32  \2502  \2502                  font-family: 'Izhitsa', sans-serif;\a 33  \2502  \2502                  font-size: px2rem(35);\a 34  \2502  \2502                  line-height: px2rem(35);\a 35  \2502  \2502                  margin-bottom: px2rem(18);\a 36  \2502  \2502              }\a 37  \2502  \2502              &--list{\a 38  \2502  \2502                  margin-bottom: px2rem(29);\a 39  \2502  \2502                  &--item{\a 40  \2502  \2502                      font-size: px2rem(25);\a 41  \2502  \2502                      line-height: px2rem(28);\a 42  \2502  \2502                      margin-bottom: px2rem(24);\a 43  \2502  \2502                      color: $color-text-light;\a 44  \2502  \2502                      display: block;\a 45  \2502  \2502                      position: relative;\a 46  \2502  \2502                      padding-left: px2rem(51);\a 47  \2502  \2502                      &::before{\a 48  \2502  \2502                          content: '';\a 49  \2502  \2502                          position: absolute;\a 50  \2502  \2502                          left: 0;\a 51  \2502  \2502                          top: 0;\a 52  \2502  \2502                          width: px2rem(30);\a 53  \2502  \2502                          height: 100%;\a 54  \2502  \2502                          background-color: $color-text-light;\a 55  \2502  \2502                          margin-right: px2rem(21);\a 56  \2502  \2502                          mask-size: contain;\a 57  \2502  \2502                          mask-position: top;\a 58  \2502  \2502                          mask-repeat: no-repeat;\a 59  \2502  \2502                      }\a 60  \2502  \2502                      &.special::before{\a 61  \2502  \2502                          mask-image: url('../images/doctor-icons/special.svg');\a 62  \2502  \2502                          -webkit-mask-image: url('../images/doctor-icons/special.svg');\a 63  \2502  \2502                      }\a 64  \2502  \2502                      &.age::before{\a 65  \2502  \2502                          mask-image: url('../images/doctor-icons/age.svg');\a 66  \2502  \2502                          -webkit-mask-image: url('../images/doctor-icons/age.svg');\a 67  \2502  \2502                      }\a 68  \2502  \2502                      &.position::before{\a 69  \2502  \2502                          mask-image: url('../images/doctor-icons/position.svg');\a 70  \2502  \2502                          -webkit-mask-image: url('../images/doctor-icons/position.svg');\a 71  \2502  \2502                      }\a 72  \2502  \2502                      &.category::before{\a 73  \2502  \2502                          mask-image: url('../images/doctor-icons/category.svg');\a 74  \2502  \2502                          -webkit-mask-image: url('../images/doctor-icons/category.svg');\a 75  \2502  \2502                      }\a 76  \2502  \2502                  }\a 77  \2502  \2502              }\a 78  \2502  \2502          }\a 79  \2502  \2502          &__sertificatesTitle .h2{\a 80  \2502  \2502              font-size: px2rem(35);\a 81  \2502  \2502              line-height: px2rem(35);\a 82  \2502  \2502              margin-bottom: px2rem(55);\a 83  \2502  \2502          }\a 84  \2502  \2502          &__sertificates{\a 85  \2502  \2502              flex-wrap: nowrap;\a 86  \2502  \2502              overflow-x: auto;\a 87  \2502  \2502              &--item{\a 88  \2502  \2502  \a 89  \2502  \2502                  &--image{\a 90  \2502  \2502                      width: 100%;\a 91  \2502  \2502                      aspect-ratio: 1 / 1;\a 92  \2502  \2502                      position: relative;\a 93  \2502  \2502                      overflow: hidden;\a 94  \2502  \2502                      border-radius: px2rem(27);\a 95  \2502  \2502                      &:hover::after{\a 96  \2502  \2502                          opacity: 1;\a 97  \2502  \2502                      }\a 98  \2502  \2502                      &::after{\a 99  \2502  \2502                          content: '';\a 100 \2502  \2502                          position: absolute;\a 101 \2502  \2502                          top: 0;\a 102 \2502  \2502                          left: 0;\a 103 \2502  \2502                          width: 100%;\a 104 \2502  \2502                          height: 100%;\a 105 \2502  \2502                          background-image: $sert-gradient;\a 106 \2502  \2502                          opacity: 0;\a 107 \2502  \2502                          transition: opacity 0.3s ease-in-out;\a 108 \2502  \2502                      }\a 109 \2502  \2502                      img{\a 110 \2502  \2502                          width: 100%;\a 111 \2502  \2502                          aspect-ratio: 1 / 1;\a 112 \2502  \2502                          object-fit: cover;\a 113 \2502  \2502                      }\a 114 \2502  \2502                  }\a 115 \2502  \2502  \a 116 \2502  \2502                  &--text{\a 117 \2502  \2502                      font-size: px2rem(20);\a 118 \2502  \2502                      line-height: px2rem(22);\a 119 \2502  \2502                      text-align: center;\a 120 \2502  \2502                      margin: px2rem(16) auto;\a 121 \2502  \2502                      color: $color-text-light;\a 122 \2502  \2502                  }\a 123 \2502  \2502              }\a 124 \2502  \2502          }\a 125 \2502  \2502      }\a 126 \2502  \2514  }\a     \2575 \a   doctorPage.scss 1:1  root stylesheet";
+}

@@ -18,7 +18,6 @@
 								width: 100%;
 								height: 100%;
 								object-fit: cover;
-								background-color: red;
 							}
 						}
 					}
@@ -69,3 +68,9 @@
 	}
 }
 
+@include bp(null, md){
+	.workList__row--item--text{
+		font-size: px2rem(18);
+		line-height: 1.2;
+	}
+}

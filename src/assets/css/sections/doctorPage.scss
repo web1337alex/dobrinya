@@ -158,3 +158,10 @@
 		}
 	}
 }
+
+@include bp(null, md){
+	.doctorPage__info--list--item, .doctorPage__hero--text--content{
+		font-size: px2rem(18);
+		line-height: 1.2;
+	}
+}

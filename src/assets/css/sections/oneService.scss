@@ -166,3 +166,10 @@
 		}
 	}
 }
+
+@include bp(null, md){
+	.oneService__content--text, .oneService__content--text > p, .oneService__content--info--list--item {
+		font-size: px2rem(18);
+		line-height: 1.2;
+	}
+}

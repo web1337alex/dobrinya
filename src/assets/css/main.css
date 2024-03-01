@@ -3423,7 +3423,6 @@ body.lock {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-color: red;
   }
   .workList__row--item--text {
     margin-top: 1.125rem;

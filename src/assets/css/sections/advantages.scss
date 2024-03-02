@@ -247,8 +247,8 @@
 	.mobile{
 		.advantages__items--item.active .advantages__items--item--icon,
 		.advantages__items--item:hover .advantages__items--item--icon{
-			margin: px2rem(16) !important;
-			width: 90% !important;
+			margin: 0 !important;
+			width: 60% !important;
 		}
 		.advantages{
 			position: relative;
@@ -262,13 +262,13 @@
 				&--item{
 					@include col(3, 12);
 					aspect-ratio: 1 / 1;
-					justify-content: start;
+					justify-content: center;
 					&--icon{
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						margin: px2rem(16);
-						width: 90%;
+						margin: 0;
+						width: 60%;
 					}
 					& > .tab-content{
 						position: absolute;

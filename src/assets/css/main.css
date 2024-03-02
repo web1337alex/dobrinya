@@ -2086,8 +2086,8 @@ body.lock {
 @media (min-width: 0) {
   .mobile .advantages__items--item.active .advantages__items--item--icon,
   .mobile .advantages__items--item:hover .advantages__items--item--icon {
-    margin: 1rem !important;
-    width: 90% !important;
+    margin: 0 !important;
+    width: 60% !important;
   }
   .mobile .advantages {
     position: relative;
@@ -2104,14 +2104,14 @@ body.lock {
     flex: 0 0 auto;
     width: calc(25% - 1.25rem);
     aspect-ratio: 1/1;
-    justify-content: start;
+    justify-content: center;
   }
   .mobile .advantages__items--item--icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
-    width: 90%;
+    margin: 0;
+    width: 60%;
   }
   .mobile .advantages__items--item > .tab-content {
     position: absolute;

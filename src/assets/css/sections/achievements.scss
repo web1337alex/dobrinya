@@ -1,8 +1,8 @@
 @include bp(xs) {
 
 	.achievements {
-		padding-top: px2rem(95);
-		padding-bottom: px2rem(62);
+		padding-top: px2rem(40);
+		padding-bottom: px2rem(32);
 		position: relative;
 		overflow: hidden;
 
@@ -68,6 +68,13 @@
 					margin-left: px2rem(11);
 				}
 			}
+
+			@include bp(null, md){
+				&--button{
+					align-self: center;
+				}
+			}
+
 		}
 
 		&__list {

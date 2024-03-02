@@ -1,21 +1,37 @@
 /* Error: Undefined mixin.
- *    ,
- * 1  | / @include bp(md){
- * 2  | | 
- * 3  | |     .advantages{
- * 4  | |         &__content{
- * 5  | |             &--text{
- * 6  | |                 display: none;
- * 7  | |                 &.active{
- * 8  | |                     display: flex;
- * 9  | |                 }
- * 10 | |             }
- * 11 | |         }
- * 12 | |     }
- * 13 | | 
- * 14 | \ }
- *    '
- *   advantages.scss 1:1  root stylesheet */
+ *     ,
+ * 109 | / @include bp(xs) {
+ * 110 | |     .advantages {
+ * 111 | |         @include common-advantages-styles;
+ * 112 | | 
+ * 113 | |         .h1 {
+ * 114 | |             font-size: px2rem(30);
+ * 115 | |             line-height: px2rem(30);
+ * 116 | |             text-align: center;
+ * 117 | |             background: $title-gradient;
+ * 118 | |             -webkit-background-clip: text;
+ * 119 | |             -webkit-text-fill-color: transparent;
+ * 120 | |             margin-bottom: px2rem(102);
+ * 121 | |             padding: 0 px2rem(30);
+ * 122 | |         }
+ * 123 | | 
+ * 124 | |         &__items--item {
+ * 125 | |             @include common-item-styles;
+ * 126 | |             aspect-ratio: 351 / 182;
+ * 127 | | 
+ * 128 | |             &.active &--icon, &:hover &--icon {
+ * 129 | |                 @include item-icon-styles;
+ * 130 | |                 background: $default-light-color;
+ * 131 | |             }
+ * 132 | |         }
+ * 133 | | 
+ * 134 | |         &__content--text {
+ * 135 | |             @include common-content-styles;
+ * 136 | |         }
+ * 137 | |     }
+ * 138 | \ }
+ *     '
+ *   advantages.scss 109:1  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -25,5 +41,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 1  \2502  \250c  @include bp(md){\a 2  \2502  \2502  \a 3  \2502  \2502      .advantages{\a 4  \2502  \2502          &__content{\a 5  \2502  \2502              &--text{\a 6  \2502  \2502                  display: none;\a 7  \2502  \2502                  &.active{\a 8  \2502  \2502                      display: flex;\a 9  \2502  \2502                  }\a 10 \2502  \2502              }\a 11 \2502  \2502          }\a 12 \2502  \2502      }\a 13 \2502  \2502  \a 14 \2502  \2514  }\a    \2575 \a   advantages.scss 1:1  root stylesheet";
+  content: "Error: Undefined mixin.\a     \2577 \a 109 \2502  \250c  @include bp(xs) {\a 110 \2502  \2502      .advantages {\a 111 \2502  \2502          @include common-advantages-styles;\a 112 \2502  \2502  \a 113 \2502  \2502          .h1 {\a 114 \2502  \2502              font-size: px2rem(30);\a 115 \2502  \2502              line-height: px2rem(30);\a 116 \2502  \2502              text-align: center;\a 117 \2502  \2502              background: $title-gradient;\a 118 \2502  \2502              -webkit-background-clip: text;\a 119 \2502  \2502              -webkit-text-fill-color: transparent;\a 120 \2502  \2502              margin-bottom: px2rem(102);\a 121 \2502  \2502              padding: 0 px2rem(30);\a 122 \2502  \2502          }\a 123 \2502  \2502  \a 124 \2502  \2502          &__items--item {\a 125 \2502  \2502              @include common-item-styles;\a 126 \2502  \2502              aspect-ratio: 351 / 182;\a 127 \2502  \2502  \a 128 \2502  \2502              &.active &--icon, &:hover &--icon {\a 129 \2502  \2502                  @include item-icon-styles;\a 130 \2502  \2502                  background: $default-light-color;\a 131 \2502  \2502              }\a 132 \2502  \2502          }\a 133 \2502  \2502  \a 134 \2502  \2502          &__content--text {\a 135 \2502  \2502              @include common-content-styles;\a 136 \2502  \2502          }\a 137 \2502  \2502      }\a 138 \2502  \2514  }\a     \2575 \a   advantages.scss 109:1  root stylesheet";
 }

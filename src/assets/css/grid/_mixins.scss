@@ -3,16 +3,36 @@
     width: calc(#{percentage($size / $grid-count)} - #{$gap-grid});
 }
 
-@mixin media($width){
-    @media (min-width: $width) {
-        @content;
+// Определение медиа-выражений для минимальной и максимальной ширины
+@mixin media($min-width: null, $max-width: null) {
+    @if $min-width != null and $max-width != null {
+        @media (min-width: $min-width) and (max-width: $max-width) {
+            @content;
+        }
+    } @else if $min-width != null {
+        @media (min-width: $min-width) {
+            @content;
+        }
+    } @else if $max-width != null {
+        @media (max-width: $max-width) {
+            @content;
+        }
     }
 }
 
-@mixin bp($breakpoint-name){
-    $width: map-get($grid-breakpoints, $breakpoint-name);
-    @include media($width){
-        @content;
+// Упрощенный миксин для работы с контрольными точками (breakpoints)
+@mixin bp($breakpoint-name, $next-breakpoint: null) {
+    $min-width: map-get($grid-breakpoints, $breakpoint-name);
+
+    @if $next-breakpoint != null {
+        $max-width: map-get($grid-breakpoints, $next-breakpoint) - 1;
+        @include media($min-width, $max-width) {
+            @content;
+        }
+    } @else {
+        @include media($min-width) {
+            @content;
+        }
     }
 }
 

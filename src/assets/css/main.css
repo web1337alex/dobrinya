@@ -1057,6 +1057,7 @@ body.lock {
     background-image: url("../images/achievements-bg.svg");
     transform: scale(1, -1);
     opacity: 0.5;
+    background-size: cover;
   }
   .secBg::before {
     width: 50%;
@@ -2057,28 +2058,6 @@ body.lock {
     background: rgb(107, 107, 107);
   }
 }
-@media (min-width: 0) and (max-width: 47rem) {
-  .advantages {
-    padding-top: 1.875rem;
-  }
-  .advantages__content--title.h1 {
-    margin-bottom: 1.875rem;
-  }
-  .advantages__items {
-    display: flex;
-    overflow-x: scroll;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-  .advantages__items--item {
-    width: 90vw;
-    justify-content: start;
-    margin: 0 1rem;
-  }
-  .advantages__items--item:not(.advantages__items--item.active) {
-    padding: 1rem;
-  }
-}
 @media (min-width: 48rem) {
   .advantages {
     padding-top: 4.75rem;
@@ -2086,6 +2065,66 @@ body.lock {
   .advantages__content--title.h1 {
     font-size: 2.5rem;
     margin-bottom: 1.875rem;
+  }
+}
+@media (min-width: 0) {
+  .advantages.desktop {
+    display: none;
+  }
+  .advantages.mobile {
+    display: block;
+  }
+}
+@media (min-width: 48rem) {
+  .advantages.desktop {
+    display: block;
+  }
+  .advantages.mobile {
+    display: none;
+  }
+}
+@media (min-width: 0) {
+  .mobile .advantages__items--item.active .advantages__items--item--icon,
+  .mobile .advantages__items--item:hover .advantages__items--item--icon {
+    margin: 1rem !important;
+    width: 90% !important;
+  }
+  .mobile .advantages {
+    position: relative;
+    padding-bottom: 80vh;
+  }
+  .mobile .advantages__items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+  }
+  .mobile .advantages__items--item {
+    flex: 0 0 auto;
+    width: calc(25% - 1.25rem);
+    aspect-ratio: 1/1;
+    justify-content: start;
+  }
+  .mobile .advantages__items--item--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    width: 90%;
+  }
+  .mobile .advantages__items--item > .tab-content {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .mobile .advantages__items--item > .tab-content > .row {
+    background-color: #98B23D;
+  }
+  .mobile .advantages__content {
+    display: none;
   }
 }
 @media (min-width: 0) {

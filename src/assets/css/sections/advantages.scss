@@ -1,6 +1,5 @@
 @mixin common-advantages-styles {
 	position: relative;
-	padding-top: px2rem(176);
 
 	&::before {
 		content: "";
@@ -213,4 +212,80 @@
 			}
 		}
 	}
+}
+
+@include bp(md){
+	.advantages{
+		padding-top: px2rem(76);
+		&__content--title.h1{
+			font-size: px2rem(40);
+			margin-bottom: px2rem(30);
+		}
+	}
+}
+
+@include bp(xs){
+	.advantages.desktop{
+		display: none;
+	}
+	.advantages.mobile{
+		display: block;
+	}
+}
+
+@include bp(md){
+	.advantages.desktop{
+		display: block;
+	}
+	.advantages.mobile{
+		display: none;
+	}
+}
+
+@include bp(xs){
+
+	.mobile{
+		.advantages__items--item.active .advantages__items--item--icon,
+		.advantages__items--item:hover .advantages__items--item--icon{
+			margin: px2rem(16) !important;
+			width: 90% !important;
+		}
+		.advantages{
+			position: relative;
+			padding-bottom: 80vh;
+			&__items{
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+				position: relative;
+				&--item{
+					@include col(3, 12);
+					aspect-ratio: 1 / 1;
+					justify-content: start;
+					&--icon{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin: px2rem(16);
+						width: 90%;
+					}
+					& > .tab-content{
+						position: absolute;
+						left: 0;
+						top: 100%;
+						border-radius: px2rem(16);
+						overflow: hidden;
+						& > .row{
+							background-color: $first-accent-color;
+						}
+					}
+				}
+			}
+			&__content{
+				display: none;
+			}
+		}
+	}
+
 }

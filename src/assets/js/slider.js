@@ -1,26 +1,75 @@
 class Carousel {
     constructor(element, configuration, options = {}) {
-        const defaultOptions = {
-            arrows: true,
-            nav: true
-        };
+        // Проверяем, что элемент не null и не undefined
+        if(element && element instanceof HTMLElement) {
+            this.carouselElement = element;
+            const defaultOptions = {
+                arrows: true,
+                nav: true
+            };
 
-        this.options = { ...defaultOptions, ...options };
-        this.carouselElement = element;
-        this.configuration = configuration;
+            this.options = { ...defaultOptions, ...options };
+            this.configuration = configuration;
 
-        this.resizeHandler = this.onWindowResize.bind(this);
-        window.addEventListener("resize", this.resizeHandler);
+            this.resizeHandler = this.onWindowResize.bind(this);
+            window.addEventListener("resize", this.resizeHandler);
 
-        this.handleTouchStart = this.handleTouchStart.bind(this);
-        this.handleTouchMove = this.handleTouchMove.bind(this);
-        this.handleTouchEnd = this.handleTouchEnd.bind(this);
+            this.handleTouchStart = this.handleTouchStart.bind(this);
+            this.handleTouchMove = this.handleTouchMove.bind(this);
+            this.handleTouchEnd = this.handleTouchEnd.bind(this);
 
-        this.startX = 0;
-        this.currentX = 0;
-        this.isTouching = false;
+            this.startX = 0;
+            this.currentX = 0;
+            this.isTouching = false;
 
-        this.init();
+            this.init();
+        } else {
+            // Если элемент не существует, не выполняем инициализацию
+            console.log("Carousel element is not valid. Initialization aborted.");
+            return;
+        }
+    }
+
+    init() {
+        // Проверяем, что .carousel__slides существует внутри элемента карусели
+        let check = this.carouselElement.querySelector('.carousel__slides');
+        if (check) {
+            this.slides = this.carouselElement.querySelectorAll('.carousel__slide');
+            this.totalSlides = this.slides.length;
+            this.slidesToShow = this.calculateSlidesToShow();
+            this.calculateTotalGroups();
+            this.currentSlide = 0;
+
+            if (this.options.arrows) {
+                // Создание и добавление кнопок навигации
+                const leftButton = document.createElement('button');
+                leftButton.className = 'carousel__button carousel__button--left';
+                leftButton.setAttribute('aria-label', 'Previous slide');
+                leftButton.innerHTML = '&#10094;';
+
+                const rightButton = document.createElement('button');
+                rightButton.className = 'carousel__button carousel__button--right';
+                rightButton.setAttribute('aria-label', 'Next slide');
+                rightButton.innerHTML = '&#10095;';
+
+                this.carouselElement.appendChild(leftButton);
+                this.carouselElement.appendChild(rightButton);
+
+                this.leftClickHandler = () => this.moveSlide(-1);
+                this.rightClickHandler = () => this.moveSlide(1);
+
+                leftButton.addEventListener('click', this.leftClickHandler);
+                rightButton.addEventListener('click', this.rightClickHandler);
+            }
+
+            this.createIndicators();
+            this.updateCarousel();
+
+            this.carouselElement.addEventListener('touchstart', this.handleTouchStart, { passive: true });
+            this.carouselElement.addEventListener('mousedown', this.handleTouchStart);
+        } else {
+            console.warn("Carousel slides element is not found. Initialization aborted.");
+        }
     }
 
     onWindowResize() {
@@ -125,44 +174,6 @@ class Carousel {
         let shift = this.startX - this.currentX;
         if (Math.abs(shift) > 30) {
             this.moveSlide(shift > 0 ? 1 : -1);
-        }
-    }
-
-    init() {
-        let check = this.carouselElement.querySelector('.carousel__slides');
-        if (check) {
-            this.slides = this.carouselElement.querySelectorAll('.carousel__slide');
-            this.totalSlides = this.slides.length;
-            this.slidesToShow = this.calculateSlidesToShow();
-            this.calculateTotalGroups();
-            this.currentSlide = 0;
-
-            if (this.options.arrows) {
-                const leftButton = document.createElement('button');
-                leftButton.className = 'carousel__button carousel__button--left';
-                leftButton.setAttribute('aria-label', 'Previous slide');
-                leftButton.innerHTML = '&#10094;';
-
-                const rightButton = document.createElement('button');
-                rightButton.className = 'carousel__button carousel__button--right';
-                rightButton.setAttribute('aria-label', 'Next slide');
-                rightButton.innerHTML = '&#10095;';
-
-                this.carouselElement.appendChild(leftButton);
-                this.carouselElement.appendChild(rightButton);
-
-                this.leftClickHandler = () => this.moveSlide(-1);
-                this.rightClickHandler = () => this.moveSlide(1);
-
-                leftButton.addEventListener('click', this.leftClickHandler);
-                rightButton.addEventListener('click', this.rightClickHandler);
-            }
-
-            this.createIndicators();
-            this.updateCarousel();
-
-            this.carouselElement.addEventListener('touchstart', this.handleTouchStart, { passive: true });
-            this.carouselElement.addEventListener('mousedown', this.handleTouchStart);
         }
     }
 

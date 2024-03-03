@@ -51,14 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-let teamList1 = document.querySelector(".team__list-1");
-let teamList2 = document.querySelector(".team__list-2");
-if (teamList1) {
-    new Carousel(teamList1, {0: 2, 768: 2}, {arrows: false, nav: true});
-}
-if (teamList2) {
-    new Carousel(teamList2, {0: 2, 768: 2}, {arrows: true, nav: true});
-}
+new Carousel(document.querySelector(".team__list-2"), {0: 2, 768: 2}, {arrows: true, nav: true});
+
+
 
 let workListItemSliders = document.querySelectorAll(".workList__row--item--slider");
 if (workListItemSliders.length > 0) {
@@ -68,23 +63,47 @@ if (workListItemSliders.length > 0) {
 }
 document.addEventListener('DOMContentLoaded', () => {
     // Получаем контейнер для .reviews__box--row и прокручиваем его к середине
-    let reviewsContainer = document.querySelector('.reviews__box--container');
-    if (reviewsContainer) {
-        let scrollTo = (reviewsContainer.scrollWidth - reviewsContainer.offsetWidth) / 2;
-        reviewsContainer.scrollLeft = scrollTo;
-    }
+    let reviewsContainer = document.querySelector('.reviews__box-carousel-container');
 
-    // Добавляем обработчики событий для стрелок прокрутки
-    document.querySelectorAll('.reviews__box--arrow').forEach(arrow => {
-        arrow.addEventListener('click', function (e) {
-            let scrollAmount = 70; // количество пикселей для прокрутки
-            if (e.target.closest('.reviews__box--arrow').classList.contains('left')) {
-                reviewsContainer.scrollLeft -= scrollAmount;
-            } else if (e.target.closest('.reviews__box--arrow').classList.contains('right')) {
-                reviewsContainer.scrollLeft += scrollAmount;
+    // Проверяем, существует ли контейнер, прежде чем что-либо с ним делать
+    if (reviewsContainer) {
+        if (window.innerWidth >= 768) {
+            let scrollTo = (reviewsContainer.scrollWidth - reviewsContainer.offsetWidth) / 2;
+            reviewsContainer.scrollLeft = scrollTo;
+            // Добавляем обработчики событий для стрелок прокрутки
+            document.querySelectorAll('.reviews__box--arrow').forEach(arrow => {
+                arrow.addEventListener('click', function (e) {
+                    let scrollAmount = 70; // количество пикселей для прокрутки
+                    if (e.target.closest('.reviews__box--arrow').classList.contains('left')) {
+                        reviewsContainer.scrollLeft -= scrollAmount;
+                    } else if (e.target.closest('.reviews__box--arrow').classList.contains('right')) {
+                        reviewsContainer.scrollLeft += scrollAmount;
+                    }
+                });
+            });
+        } else{
+            document.querySelectorAll(".reviews__box--arrow").forEach(arrow => {
+                arrow.remove();
+            })
+            let rows = document.querySelectorAll('.reviews__box--row');
+            if (rows.length > 1) {
+                let targetRow = rows[0];
+                rows.forEach((row, index) => {
+                    if (index > 0) {
+                        let items = row.querySelectorAll('.reviews__box--row--item');
+                        items.forEach(item => {
+                            targetRow.appendChild(item);
+                        });
+                        row.remove();
+                    }
+                });
             }
-        });
-    });
+            new Carousel(reviewsContainer, {0: 1}, {arrows: true, nav: false});
+        }
+
+    } else {
+        console.warn('Reviews container not found');
+    }
 });
 
 document.querySelectorAll('.faqSec__items--item--title').forEach(item => {

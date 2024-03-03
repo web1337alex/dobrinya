@@ -2624,15 +2624,21 @@ body.lock {
   .reviews__title--box {
     text-transform: uppercase;
     text-align: center;
+    margin-top: 1.25rem;
   }
   .reviews__title--box--subtitle {
     color: rgb(0, 0, 0);
-    font-size: 1.875rem;
-    line-height: 2.1875rem;
+    font-size: 1.25rem;
+    line-height: 1.2;
     font-family: "SF Pro Text Medium";
+    margin-top: 0.625rem;
   }
   .reviews__title--box--subtitle span {
     color: rgb(214, 33, 33);
+  }
+  .reviews__title--box--title.h1 {
+    font-size: 1.5625rem !important;
+    line-height: 1.2 !important;
   }
   .reviews__box {
     display: flex;

@@ -25,14 +25,20 @@
 			&--box{
 				text-transform: uppercase;
 				text-align: center;
+				margin-top: px2rem(20);
 				&--subtitle{
 					color: $text-color;
-					font-size: px2rem(30);
-					line-height: px2rem(35);
+					font-size: px2rem(20);
+					line-height: 1.2;
 					font-family: 'SF Pro Text Medium';
+					margin-top: px2rem(10);
 					span{
 						color: $reviews-subtitle-color;
 					}
+				}
+				&--title.h1{
+					font-size: px2rem(25) !important;
+					line-height: 1.2 !important;
 				}
 			}
 		}

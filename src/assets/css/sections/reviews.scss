@@ -1,11 +1,5 @@
 @include bp(xs){
 	.reviews{
-		display: none;
-	}
-}
-
-@include bp(md){
-	.reviews{
 		display: block;
 		position: relative;
 		&::before{
@@ -58,6 +52,7 @@
 				justify-content: center;
 				width: px2rem(46);
 				height: px2rem(46);
+				aspect-ratio: 1 / 1;
 				border-radius: 50%;
 				background-color: $default-light-color;
 				border: px2rem(1) solid $text-color;
@@ -66,6 +61,7 @@
 					content: "";
 					display: block;
 					width: px2rem(10);
+					aspect-ratio: 1 / 1;
 					height: 100%;
 					mask-image: url("../images/reviews/arrow.svg");
 					mask-position: center;

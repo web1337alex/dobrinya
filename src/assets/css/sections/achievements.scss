@@ -4,14 +4,13 @@
 		padding-top: px2rem(40);
 		padding-bottom: px2rem(32);
 		position: relative;
-		overflow: hidden;
 
 		&::before{
 			content: "";
 			position: absolute;
-			top: -12%;
-			width: 100%;
-			aspect-ratio: 936.57/927.45;
+			top: 0;
+			width: 20%;
+			aspect-ratio: 469/928;
 			background-repeat: no-repeat;
 			background-image: url(../images/achievements-bg.svg);
 			background-size: contain;
@@ -139,11 +138,6 @@
 @include bp(md) {
 
 	.achievements {
-
-		&::before{
-			top: -50%;
-			width: 50%;
-		}
 
 		&__content {
 

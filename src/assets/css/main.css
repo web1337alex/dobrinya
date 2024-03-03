@@ -1532,6 +1532,7 @@ body.lock {
 @media (min-width: 0) {
   .intro {
     width: 100%;
+    max-height: 42.3125rem;
     padding-top: 6.375rem;
     padding-bottom: 4.75rem;
     background-position: center center;
@@ -1599,15 +1600,13 @@ body.lock {
     margin-bottom: 1.1875rem;
     display: flex;
     justify-content: center;
+    overflow: hidden;
   }
-  .intro__card--map::after {
-    display: block;
-    content: "";
-    width: 2.625rem;
-    height: 3.6875rem;
-    margin-top: 1.1875rem;
-    background-image: url("../images/header-map/label.png");
-    background-position: center;
+  .intro__card--map iframe {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
   }
   .intro__card--title {
     text-transform: uppercase;
@@ -1642,19 +1641,24 @@ body.lock {
     margin-bottom: 1.4375rem;
   }
 }
+@media (min-width: 87.5rem) {
+  .intro .h1 {
+    font-size: 4.375rem;
+    line-height: 4.399375rem;
+  }
+}
 @media (min-width: 0) {
   .achievements {
     padding-top: 2.5rem;
     padding-bottom: 2rem;
     position: relative;
-    overflow: hidden;
   }
   .achievements::before {
     content: "";
     position: absolute;
-    top: -12%;
-    width: 100%;
-    aspect-ratio: 936.57/927.45;
+    top: 0;
+    width: 20%;
+    aspect-ratio: 469/928;
     background-repeat: no-repeat;
     background-image: url(../images/achievements-bg.svg);
     background-size: contain;
@@ -1755,10 +1759,6 @@ body.lock {
   }
 }
 @media (min-width: 48rem) {
-  .achievements::before {
-    top: -50%;
-    width: 50%;
-  }
   .achievements__content--title {
     font-size: 3.125rem;
     line-height: 3.578125rem;
@@ -2599,11 +2599,6 @@ body.lock {
 }
 @media (min-width: 0) {
   .reviews {
-    display: none;
-  }
-}
-@media (min-width: 48rem) {
-  .reviews {
     display: block;
     position: relative;
   }
@@ -2655,6 +2650,7 @@ body.lock {
     justify-content: center;
     width: 2.875rem;
     height: 2.875rem;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: #ffffff;
     border: 0.0625rem solid rgb(0, 0, 0);
@@ -2664,6 +2660,7 @@ body.lock {
     content: "";
     display: block;
     width: 0.625rem;
+    aspect-ratio: 1/1;
     height: 100%;
     mask-image: url("../images/reviews/arrow.svg");
     mask-position: center;
@@ -2855,7 +2852,7 @@ body.lock {
     max-width: 6.4375rem;
     aspect-ratio: 1/1;
     border-radius: 1.5625rem;
-    background-color: rgb(152, 178, 61);
+    background-color: #ffffff;
     margin-bottom: 2.375rem;
   }
   .footer__content--hero--image img {
@@ -2997,18 +2994,15 @@ body.lock {
     position: relative;
     z-index: 2;
     border-radius: 1rem;
+    overflow: hidden;
   }
-  .footer__map--image--inner::after {
-    content: "";
-    position: absolute;
-    aspect-ratio: 42/59;
-    width: 3.75rem;
-    background-image: url("../images/header-map/label.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+  .footer__map--image--inner iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     z-index: 1;
-    top: 24%;
-    left: 53%;
+    position: relative;
   }
   .footer__map--image--inner .button {
     margin-bottom: 1.875rem;
@@ -3018,6 +3012,9 @@ body.lock {
     font-size: 0.75rem;
     line-height: 0.9rem;
     font-family: "SF Pro Text Heavy";
+    position: absolute;
+    bottom: 1.25rem;
+    z-index: 2;
   }
 }
 @media (min-width: 0) {
@@ -3352,18 +3349,13 @@ body.lock {
     position: relative;
     z-index: 2;
     border-radius: 1rem;
+    overflow: hidden;
   }
-  .contactsPage__map--image--inner::after {
-    content: "";
-    position: absolute;
-    aspect-ratio: 42/59;
-    width: 3.75rem;
-    background-image: url("../images/header-map/label.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 1;
-    top: 24%;
-    left: 53%;
+  .contactsPage__map--image--inner iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   .contactsPage__map--image--inner .button {
     margin-bottom: 1.875rem;
@@ -3373,6 +3365,8 @@ body.lock {
     font-size: 0.75rem;
     line-height: 0.9rem;
     font-family: "SF Pro Text Heavy";
+    position: absolute;
+    bottom: 1.25rem;
   }
 }
 @media (min-width: 48rem) {

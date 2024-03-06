@@ -3,14 +3,17 @@
 	.tabSearch{
 
 		&__panel{
-
+			display: flex;
+			align-items: center;
 			&--search{
 				display: flex;
 				align-items: center;
 				border-radius: px2rem(19);
-				border: px2rem(1) solid $input-tab-input-border;
+				border: px2rem(1) solid $first-accent-color;
 				overflow: hidden;
 				background-color: $default-light-color;
+				box-shadow: 0 0 px2rem(10) rgba(56, 56, 56, 0.2);
+				max-height: px2rem(38);
 
 				&::before{
 					content: '';
@@ -44,9 +47,10 @@
 				display: flex;
 				justify-content: space-between;
 				overflow-x: auto;
-				margin-top: px2rem(8);
+				padding: px2rem(10) 0;
 				&--item{
-					border: px2rem(1) solid $input-tab-input-border;
+					border: px2rem(1) solid $first-accent-color;
+					box-shadow: 0 0 px2rem(10) rgba(56, 56, 56, 0.2);
 					display: inline-flex;
 					align-items: center;
 					justify-content: center;

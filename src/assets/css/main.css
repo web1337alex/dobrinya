@@ -1504,7 +1504,7 @@ body.lock {
     justify-content: end;
   }
   .header__nav--menu--item {
-    margin-left: 1.875rem;
+    margin-left: 0.9375rem;
     background-color: transparent;
     padding: 0;
   }

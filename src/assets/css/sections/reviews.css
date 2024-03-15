@@ -150,108 +150,121 @@
  * 148 | |                             border-radius: 50%;
  * 149 | |                             overflow: hidden;
  * 150 | |                             margin-left: px2rem(23);
- * 151 | |                             & > img{
- * 152 | |                                 width: 100%;
- * 153 | |                                 height: 100%;
- * 154 | |                                 object-fit: cover;
- * 155 | |                             }
- * 156 | |                         }
- * 157 | |                         &--desc{
- * 158 | |                             display: flex;
- * 159 | |                             flex-direction: column;
- * 160 | |                             margin-left: px2rem(15);
- * 161 | |                             &--name{
- * 162 | |                                 font-family: 'SF Pro Text Semibold';
- * 163 | |                                 font-size: px2rem(20);
- * 164 | |                                 line-height: px2rem(28.4);
- * 165 | |                                 color: $review-item-name-color;
- * 166 | |                             }
- * 167 | |                             &--date{
- * 168 | |                                 font-family: 'SF Pro Text Medium';
- * 169 | |                                 font-size: px2rem(16);
- * 170 | |                                 line-height: px2rem(22.72);
- * 171 | |                                 color: $review-item-date-color;
- * 172 | |                             }
- * 173 | |                         }
- * 174 | |                         &--grade{
- * 175 | |                             margin-left: px2rem(11);
- * 176 | |                             &--text{
- * 177 | |                                 display: flex;
- * 178 | |                                 align-items: center;
- * 179 | |                                 font-size: px2rem(16);
- * 180 | |                                 line-height: px2rem(22.72);
- * 181 | |                                 font-family: 'SF Pro Text Heavy';
- * 182 | |                                 color: $review-item-grade-text-color;
- * 183 | |                                 &::before{
- * 184 | |                                     content: "";
- * 185 | |                                     display: inline-flex;
- * 186 | |                                     background-color: $review-item-grade-text-color;
- * 187 | |                                     width: px2rem(18);
- * 188 | |                                     height: px2rem(18);
- * 189 | |                                     aspect-ratio: 1 / 1;
- * 190 | |                                     mask-image: url("../images/reviews/star.svg");
- * 191 | |                                     mask-size: contain;
- * 192 | |                                     mask-repeat: no-repeat;
- * 193 | |                                     mask-position: center;
- * 194 | |                                     -webkit-mask-image: url("../images/reviews/star.svg");
- * 195 | |                                     -webkit-mask-size: contain;
- * 196 | |                                     -webkit-mask-repeat: no-repeat;
- * 197 | |                                     -webkit-mask-position: center;
- * 198 | |                                     margin-right: px2rem(4);
- * 199 | |                                 }
- * 200 | |                             }
- * 201 | |                         }
- * 202 | |                     }
- * 203 | |                 }
- * 204 | | 
- * 205 | |                 &--item.green > &--item--text, &--item.green > &--item--text::before, &--item.green > &--item--text::after{
- * 206 | |                     background-color: $review-item-green-text;
- * 207 | |                 }
- * 208 | | 
- * 209 | |                 &--item.green > &--item--text::before,
- * 210 | |                 &--item.red > &--item--text::before{
- * 211 | |                     box-shadow: unset;
- * 212 | |                 }
- * 213 | | 
- * 214 | |                 &--item.green > &--item--text > &--item--text--label{
- * 215 | |                     position: absolute;
- * 216 | |                     border-radius: px2rem(6);
- * 217 | |                     padding: px2rem(4) px2rem(5);
- * 218 | |                     transform: rotate(9deg);
- * 219 | |                     background-color: $default-light-color;
- * 220 | |                     box-shadow: $review-label-box-shadow;
- * 221 | |                     letter-spacing: 0.03em;
- * 222 | |                     font-size: px2rem(10);
- * 223 | |                     line-height: px2rem(16);
- * 224 | |                     font-family: 'SF Pro Text Heavy';
- * 225 | |                     text-transform: uppercase;
- * 226 | |                     text-align: center;
- * 227 | |                     color: $review-item-green-text;
- * 228 | |                     top: px2rem(0);
- * 229 | |                     right: px2rem(-15);
- * 230 | |                 }
- * 231 | | 
- * 232 | |                 &--item.green > &--item--text > &--item--text--content,
- * 233 | |                 &--item.red > &--item--text > &--item--text--content{
- * 234 | |                     color: $default-light-color;
- * 235 | |                 }
- * 236 | | 
- * 237 | |                 &--item.red > &--item--text, &--item.red > &--item--text::before, &--item.red > &--item--text::after{
- * 238 | |                     background-color: $review-item-red-text;
- * 239 | |                 }
- * 240 | | 
- * 241 | |                 &--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text::before{
- * 242 | |                     background-color: $review-item-red-text;
+ * 151 | |                             display: flex;
+ * 152 | |                             justify-content: center;
+ * 153 | |                             align-items: center;
+ * 154 | |                             & > *{
+ * 155 | |                                 width: 100%;
+ * 156 | |                                 height: 100%;
+ * 157 | |                                 object-fit: cover;
+ * 158 | |                             }
+ * 159 | |                             & > span{
+ * 160 | |                                 font-family: "SF Pro Text Semibold";
+ * 161 | |                                 color: $default-light-color;
+ * 162 | |                                 display: flex;
+ * 163 | |                                 justify-content: center;
+ * 164 | |                                 align-items: center;
+ * 165 | |                                 font-size: px2rem(23);
+ * 166 | |                                 background-color: $input-tab-input-color;
+ * 167 | |                             }
+ * 168 | | 
+ * 169 | |                         }
+ * 170 | |                         &--desc{
+ * 171 | |                             display: flex;
+ * 172 | |                             flex-direction: column;
+ * 173 | |                             margin-left: px2rem(15);
+ * 174 | |                             &--name{
+ * 175 | |                                 font-family: 'SF Pro Text Semibold';
+ * 176 | |                                 font-size: px2rem(20);
+ * 177 | |                                 line-height: px2rem(28.4);
+ * 178 | |                                 color: $review-item-name-color;
+ * 179 | |                             }
+ * 180 | |                             &--date{
+ * 181 | |                                 font-family: 'SF Pro Text Medium';
+ * 182 | |                                 font-size: px2rem(16);
+ * 183 | |                                 line-height: px2rem(22.72);
+ * 184 | |                                 color: $review-item-date-color;
+ * 185 | |                             }
+ * 186 | |                         }
+ * 187 | |                         &--grade{
+ * 188 | |                             margin-left: px2rem(11);
+ * 189 | |                             &--text{
+ * 190 | |                                 display: flex;
+ * 191 | |                                 align-items: center;
+ * 192 | |                                 font-size: px2rem(16);
+ * 193 | |                                 line-height: px2rem(22.72);
+ * 194 | |                                 font-family: 'SF Pro Text Heavy';
+ * 195 | |                                 color: $review-item-grade-text-color;
+ * 196 | |                                 &::before{
+ * 197 | |                                     content: "";
+ * 198 | |                                     display: inline-flex;
+ * 199 | |                                     background-color: $review-item-grade-text-color;
+ * 200 | |                                     width: px2rem(18);
+ * 201 | |                                     height: px2rem(18);
+ * 202 | |                                     aspect-ratio: 1 / 1;
+ * 203 | |                                     mask-image: url("../images/reviews/star.svg");
+ * 204 | |                                     mask-size: contain;
+ * 205 | |                                     mask-repeat: no-repeat;
+ * 206 | |                                     mask-position: center;
+ * 207 | |                                     -webkit-mask-image: url("../images/reviews/star.svg");
+ * 208 | |                                     -webkit-mask-size: contain;
+ * 209 | |                                     -webkit-mask-repeat: no-repeat;
+ * 210 | |                                     -webkit-mask-position: center;
+ * 211 | |                                     margin-right: px2rem(4);
+ * 212 | |                                 }
+ * 213 | |                             }
+ * 214 | |                         }
+ * 215 | |                     }
+ * 216 | |                 }
+ * 217 | | 
+ * 218 | |                 &--item.green > &--item--text, &--item.green > &--item--text::before, &--item.green > &--item--text::after{
+ * 219 | |                     background-color: $review-item-green-text;
+ * 220 | |                 }
+ * 221 | | 
+ * 222 | |                 &--item.green > &--item--text::before,
+ * 223 | |                 &--item.red > &--item--text::before{
+ * 224 | |                     box-shadow: unset;
+ * 225 | |                 }
+ * 226 | | 
+ * 227 | |                 &--item.green > &--item--text > &--item--text--label{
+ * 228 | |                     position: absolute;
+ * 229 | |                     border-radius: px2rem(6);
+ * 230 | |                     padding: px2rem(4) px2rem(5);
+ * 231 | |                     transform: rotate(9deg);
+ * 232 | |                     background-color: $default-light-color;
+ * 233 | |                     box-shadow: $review-label-box-shadow;
+ * 234 | |                     letter-spacing: 0.03em;
+ * 235 | |                     font-size: px2rem(10);
+ * 236 | |                     line-height: px2rem(16);
+ * 237 | |                     font-family: 'SF Pro Text Heavy';
+ * 238 | |                     text-transform: uppercase;
+ * 239 | |                     text-align: center;
+ * 240 | |                     color: $review-item-green-text;
+ * 241 | |                     top: px2rem(0);
+ * 242 | |                     right: px2rem(-15);
  * 243 | |                 }
  * 244 | | 
- * 245 | |                 &--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text{
- * 246 | |                     color: $review-item-red-text;
- * 247 | |                 }
- * 248 | | 
- * 249 | |             }
- * 250 | |         }
- * 251 | |     }
- * 252 | \ }
+ * 245 | |                 &--item.green > &--item--text > &--item--text--content,
+ * 246 | |                 &--item.red > &--item--text > &--item--text--content{
+ * 247 | |                     color: $default-light-color;
+ * 248 | |                 }
+ * 249 | | 
+ * 250 | |                 &--item.red > &--item--text, &--item.red > &--item--text::before, &--item.red > &--item--text::after{
+ * 251 | |                     background-color: $review-item-red-text;
+ * 252 | |                 }
+ * 253 | | 
+ * 254 | |                 &--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text::before{
+ * 255 | |                     background-color: $review-item-red-text;
+ * 256 | |                 }
+ * 257 | | 
+ * 258 | |                 &--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text{
+ * 259 | |                     color: $review-item-red-text;
+ * 260 | |                 }
+ * 261 | | 
+ * 262 | |             }
+ * 263 | |         }
+ * 264 | |     }
+ * 265 | \ }
  *     '
  *   reviews.scss 1:1  root stylesheet */
 
@@ -263,5 +276,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a     \2577 \a 1   \2502  \250c  @include bp(xs){\a 2   \2502  \2502      .reviews{\a 3   \2502  \2502          display: block;\a 4   \2502  \2502          position: relative;\a 5   \2502  \2502          &::before{\a 6   \2502  \2502              content: \"\";\a 7   \2502  \2502              display: block;\a 8   \2502  \2502              position: absolute;\a 9   \2502  \2502              width: 25%;\a 10  \2502  \2502              aspect-ratio: 1 / 1;\a 11  \2502  \2502              bottom: 0;\a 12  \2502  \2502              transform: scale(-1, 1);\a 13  \2502  \2502              right: 0;\a 14  \2502  \2502              z-index: -1;\a 15  \2502  \2502              background-image: url(\"../images/achievements-bg.svg\");\a 16  \2502  \2502              opacity: 0.7;\a 17  \2502  \2502              background-repeat: no-repeat;\a 18  \2502  \2502          }\a 19  \2502  \2502  \a 20  \2502  \2502          & > section{\a 21  \2502  \2502              width: 100%;\a 22  \2502  \2502          }\a 23  \2502  \2502  \a 24  \2502  \2502          &__title{\a 25  \2502  \2502              margin-bottom: px2rem(43);\a 26  \2502  \2502              &--box{\a 27  \2502  \2502                  text-transform: uppercase;\a 28  \2502  \2502                  text-align: center;\a 29  \2502  \2502                  margin-top: px2rem(20);\a 30  \2502  \2502                  &--subtitle{\a 31  \2502  \2502                      color: $text-color;\a 32  \2502  \2502                      font-size: px2rem(20);\a 33  \2502  \2502                      line-height: 1.2;\a 34  \2502  \2502                      font-family: 'SF Pro Text Medium';\a 35  \2502  \2502                      margin-top: px2rem(10);\a 36  \2502  \2502                      span{\a 37  \2502  \2502                          color: $reviews-subtitle-color;\a 38  \2502  \2502                      }\a 39  \2502  \2502                  }\a 40  \2502  \2502                  &--title.h1{\a 41  \2502  \2502                      font-size: px2rem(25) !important;\a 42  \2502  \2502                      line-height: 1.2 !important;\a 43  \2502  \2502                  }\a 44  \2502  \2502              }\a 45  \2502  \2502          }\a 46  \2502  \2502  \a 47  \2502  \2502          &__box{\a 48  \2502  \2502              display: flex;\a 49  \2502  \2502              justify-content: space-between;\a 50  \2502  \2502              align-items: center;\a 51  \2502  \2502              padding-bottom: px2rem(120);\a 52  \2502  \2502              max-width: $container-big-width;\a 53  \2502  \2502              .container-big{\a 54  \2502  \2502                  overflow-x: hidden;\a 55  \2502  \2502                  width: calc($container-big-width - (px2rem(60) * 2));\a 56  \2502  \2502              }\a 57  \2502  \2502              &--arrow{\a 58  \2502  \2502                  display: flex;\a 59  \2502  \2502                  align-items: center;\a 60  \2502  \2502                  justify-content: center;\a 61  \2502  \2502                  width: px2rem(46);\a 62  \2502  \2502                  height: px2rem(46);\a 63  \2502  \2502                  aspect-ratio: 1 / 1;\a 64  \2502  \2502                  border-radius: 50%;\a 65  \2502  \2502                  background-color: $default-light-color;\a 66  \2502  \2502                  border: px2rem(1) solid $text-color;\a 67  \2502  \2502                  cursor: pointer;\a 68  \2502  \2502                  &::before{\a 69  \2502  \2502                      content: \"\";\a 70  \2502  \2502                      display: block;\a 71  \2502  \2502                      width: px2rem(10);\a 72  \2502  \2502                      aspect-ratio: 1 / 1;\a 73  \2502  \2502                      height: 100%;\a 74  \2502  \2502                      mask-image: url(\"../images/reviews/arrow.svg\");\a 75  \2502  \2502                      mask-position: center;\a 76  \2502  \2502                      mask-size: contain;\a 77  \2502  \2502                      mask-repeat: no-repeat;\a 78  \2502  \2502                      -webkit-mask-image: url(\"../images/reviews/arrow.svg\");\a 79  \2502  \2502                      -webkit-mask-position: center;\a 80  \2502  \2502                      -webkit-mask-size: contain;\a 81  \2502  \2502                      -webkit-mask-repeat: no-repeat;\a 82  \2502  \2502                      background-color: $text-color;\a 83  \2502  \2502                  }\a 84  \2502  \2502              }\a 85  \2502  \2502              &--arrow.right{\a 86  \2502  \2502                  transform: rotate(180deg);\a 87  \2502  \2502              }\a 88  \2502  \2502              &--row{\a 89  \2502  \2502                  padding-top: px2rem(20);\a 90  \2502  \2502                  min-width: 100vw;\a 91  \2502  \2502                  flex-wrap: nowrap;\a 92  \2502  \2502                  &--item{\a 93  \2502  \2502                      display: inline-flex;\a 94  \2502  \2502                      flex-direction: column;\a 95  \2502  \2502                      @include col(12, 12);\a 96  \2502  \2502  \a 97  \2502  \2502                      &--text{\a 98  \2502  \2502                          display: flex;\a 99  \2502  \2502                          border-radius: px2rem(18);\a 100 \2502  \2502  \a 101 \2502  \2502                          box-shadow: $review-item-drop-shadow;\a 102 \2502  \2502                          background-color: $default-light-color;\a 103 \2502  \2502                          padding: px2rem(29) px2rem(29) px2rem(42) px2rem(29);\a 104 \2502  \2502                          position: relative;\a 105 \2502  \2502                          &::before, &::after{\a 106 \2502  \2502                              content: \"\";\a 107 \2502  \2502                              display: block;\a 108 \2502  \2502                              aspect-ratio: 1 / 1;\a 109 \2502  \2502                              position: absolute;\a 110 \2502  \2502                              background-color: $default-light-color;\a 111 \2502  \2502                              border-radius: 50%;\a 112 \2502  \2502                          }\a 113 \2502  \2502                          &::before{\a 114 \2502  \2502                              width: px2rem(36);\a 115 \2502  \2502                              height: px2rem(36);\a 116 \2502  \2502                              bottom: px2rem(-14);\a 117 \2502  \2502                              left: px2rem(92);\a 118 \2502  \2502                              box-shadow: $review-item-circle-1-drop-shadow;\a 119 \2502  \2502                          }\a 120 \2502  \2502                          &::after{\a 121 \2502  \2502                              width: px2rem(18);\a 122 \2502  \2502                              height: px2rem(18);\a 123 \2502  \2502                              bottom: px2rem(-34);\a 124 \2502  \2502                              left: px2rem(80);\a 125 \2502  \2502                              box-shadow: $review-item-circle-2-drop-shadow;\a 126 \2502  \2502                          }\a 127 \2502  \2502                          &--content{\a 128 \2502  \2502                              font-size: px2rem(16);\a 129 \2502  \2502                              line-height: px2rem(22.72);\a 130 \2502  \2502                              color: $text-color;\a 131 \2502  \2502                              &::before{\a 132 \2502  \2502                                  display: inline;\a 133 \2502  \2502                                  content: \"\201c \";\a 134 \2502  \2502                              }\a 135 \2502  \2502                              &::after{\a 136 \2502  \2502                                  display: inline;\a 137 \2502  \2502                                  content: \"\201c \";\a 138 \2502  \2502                              }\a 139 \2502  \2502                          }\a 140 \2502  \2502                      }\a 141 \2502  \2502                      &--author{\a 142 \2502  \2502                          margin-top: px2rem(28);\a 143 \2502  \2502                          display: flex;\a 144 \2502  \2502                          align-items: center;\a 145 \2502  \2502                          &--photo{\a 146 \2502  \2502                              width: px2rem(66);\a 147 \2502  \2502                              height: px2rem(66);\a 148 \2502  \2502                              border-radius: 50%;\a 149 \2502  \2502                              overflow: hidden;\a 150 \2502  \2502                              margin-left: px2rem(23);\a 151 \2502  \2502                              & > img{\a 152 \2502  \2502                                  width: 100%;\a 153 \2502  \2502                                  height: 100%;\a 154 \2502  \2502                                  object-fit: cover;\a 155 \2502  \2502                              }\a 156 \2502  \2502                          }\a 157 \2502  \2502                          &--desc{\a 158 \2502  \2502                              display: flex;\a 159 \2502  \2502                              flex-direction: column;\a 160 \2502  \2502                              margin-left: px2rem(15);\a 161 \2502  \2502                              &--name{\a 162 \2502  \2502                                  font-family: 'SF Pro Text Semibold';\a 163 \2502  \2502                                  font-size: px2rem(20);\a 164 \2502  \2502                                  line-height: px2rem(28.4);\a 165 \2502  \2502                                  color: $review-item-name-color;\a 166 \2502  \2502                              }\a 167 \2502  \2502                              &--date{\a 168 \2502  \2502                                  font-family: 'SF Pro Text Medium';\a 169 \2502  \2502                                  font-size: px2rem(16);\a 170 \2502  \2502                                  line-height: px2rem(22.72);\a 171 \2502  \2502                                  color: $review-item-date-color;\a 172 \2502  \2502                              }\a 173 \2502  \2502                          }\a 174 \2502  \2502                          &--grade{\a 175 \2502  \2502                              margin-left: px2rem(11);\a 176 \2502  \2502                              &--text{\a 177 \2502  \2502                                  display: flex;\a 178 \2502  \2502                                  align-items: center;\a 179 \2502  \2502                                  font-size: px2rem(16);\a 180 \2502  \2502                                  line-height: px2rem(22.72);\a 181 \2502  \2502                                  font-family: 'SF Pro Text Heavy';\a 182 \2502  \2502                                  color: $review-item-grade-text-color;\a 183 \2502  \2502                                  &::before{\a 184 \2502  \2502                                      content: \"\";\a 185 \2502  \2502                                      display: inline-flex;\a 186 \2502  \2502                                      background-color: $review-item-grade-text-color;\a 187 \2502  \2502                                      width: px2rem(18);\a 188 \2502  \2502                                      height: px2rem(18);\a 189 \2502  \2502                                      aspect-ratio: 1 / 1;\a 190 \2502  \2502                                      mask-image: url(\"../images/reviews/star.svg\");\a 191 \2502  \2502                                      mask-size: contain;\a 192 \2502  \2502                                      mask-repeat: no-repeat;\a 193 \2502  \2502                                      mask-position: center;\a 194 \2502  \2502                                      -webkit-mask-image: url(\"../images/reviews/star.svg\");\a 195 \2502  \2502                                      -webkit-mask-size: contain;\a 196 \2502  \2502                                      -webkit-mask-repeat: no-repeat;\a 197 \2502  \2502                                      -webkit-mask-position: center;\a 198 \2502  \2502                                      margin-right: px2rem(4);\a 199 \2502  \2502                                  }\a 200 \2502  \2502                              }\a 201 \2502  \2502                          }\a 202 \2502  \2502                      }\a 203 \2502  \2502                  }\a 204 \2502  \2502  \a 205 \2502  \2502                  &--item.green > &--item--text, &--item.green > &--item--text::before, &--item.green > &--item--text::after{\a 206 \2502  \2502                      background-color: $review-item-green-text;\a 207 \2502  \2502                  }\a 208 \2502  \2502  \a 209 \2502  \2502                  &--item.green > &--item--text::before,\a 210 \2502  \2502                  &--item.red > &--item--text::before{\a 211 \2502  \2502                      box-shadow: unset;\a 212 \2502  \2502                  }\a 213 \2502  \2502  \a 214 \2502  \2502                  &--item.green > &--item--text > &--item--text--label{\a 215 \2502  \2502                      position: absolute;\a 216 \2502  \2502                      border-radius: px2rem(6);\a 217 \2502  \2502                      padding: px2rem(4) px2rem(5);\a 218 \2502  \2502                      transform: rotate(9deg);\a 219 \2502  \2502                      background-color: $default-light-color;\a 220 \2502  \2502                      box-shadow: $review-label-box-shadow;\a 221 \2502  \2502                      letter-spacing: 0.03em;\a 222 \2502  \2502                      font-size: px2rem(10);\a 223 \2502  \2502                      line-height: px2rem(16);\a 224 \2502  \2502                      font-family: 'SF Pro Text Heavy';\a 225 \2502  \2502                      text-transform: uppercase;\a 226 \2502  \2502                      text-align: center;\a 227 \2502  \2502                      color: $review-item-green-text;\a 228 \2502  \2502                      top: px2rem(0);\a 229 \2502  \2502                      right: px2rem(-15);\a 230 \2502  \2502                  }\a 231 \2502  \2502  \a 232 \2502  \2502                  &--item.green > &--item--text > &--item--text--content,\a 233 \2502  \2502                  &--item.red > &--item--text > &--item--text--content{\a 234 \2502  \2502                      color: $default-light-color;\a 235 \2502  \2502                  }\a 236 \2502  \2502  \a 237 \2502  \2502                  &--item.red > &--item--text, &--item.red > &--item--text::before, &--item.red > &--item--text::after{\a 238 \2502  \2502                      background-color: $review-item-red-text;\a 239 \2502  \2502                  }\a 240 \2502  \2502  \a 241 \2502  \2502                  &--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text::before{\a 242 \2502  \2502                      background-color: $review-item-red-text;\a 243 \2502  \2502                  }\a 244 \2502  \2502  \a 245 \2502  \2502                  &--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text{\a 246 \2502  \2502                      color: $review-item-red-text;\a 247 \2502  \2502                  }\a 248 \2502  \2502  \a 249 \2502  \2502              }\a 250 \2502  \2502          }\a 251 \2502  \2502      }\a 252 \2502  \2514  }\a     \2575 \a   reviews.scss 1:1  root stylesheet";
+  content: "Error: Undefined mixin.\a     \2577 \a 1   \2502  \250c  @include bp(xs){\a 2   \2502  \2502      .reviews{\a 3   \2502  \2502          display: block;\a 4   \2502  \2502          position: relative;\a 5   \2502  \2502          &::before{\a 6   \2502  \2502              content: \"\";\a 7   \2502  \2502              display: block;\a 8   \2502  \2502              position: absolute;\a 9   \2502  \2502              width: 25%;\a 10  \2502  \2502              aspect-ratio: 1 / 1;\a 11  \2502  \2502              bottom: 0;\a 12  \2502  \2502              transform: scale(-1, 1);\a 13  \2502  \2502              right: 0;\a 14  \2502  \2502              z-index: -1;\a 15  \2502  \2502              background-image: url(\"../images/achievements-bg.svg\");\a 16  \2502  \2502              opacity: 0.7;\a 17  \2502  \2502              background-repeat: no-repeat;\a 18  \2502  \2502          }\a 19  \2502  \2502  \a 20  \2502  \2502          & > section{\a 21  \2502  \2502              width: 100%;\a 22  \2502  \2502          }\a 23  \2502  \2502  \a 24  \2502  \2502          &__title{\a 25  \2502  \2502              margin-bottom: px2rem(43);\a 26  \2502  \2502              &--box{\a 27  \2502  \2502                  text-transform: uppercase;\a 28  \2502  \2502                  text-align: center;\a 29  \2502  \2502                  margin-top: px2rem(20);\a 30  \2502  \2502                  &--subtitle{\a 31  \2502  \2502                      color: $text-color;\a 32  \2502  \2502                      font-size: px2rem(20);\a 33  \2502  \2502                      line-height: 1.2;\a 34  \2502  \2502                      font-family: 'SF Pro Text Medium';\a 35  \2502  \2502                      margin-top: px2rem(10);\a 36  \2502  \2502                      span{\a 37  \2502  \2502                          color: $reviews-subtitle-color;\a 38  \2502  \2502                      }\a 39  \2502  \2502                  }\a 40  \2502  \2502                  &--title.h1{\a 41  \2502  \2502                      font-size: px2rem(25) !important;\a 42  \2502  \2502                      line-height: 1.2 !important;\a 43  \2502  \2502                  }\a 44  \2502  \2502              }\a 45  \2502  \2502          }\a 46  \2502  \2502  \a 47  \2502  \2502          &__box{\a 48  \2502  \2502              display: flex;\a 49  \2502  \2502              justify-content: space-between;\a 50  \2502  \2502              align-items: center;\a 51  \2502  \2502              padding-bottom: px2rem(120);\a 52  \2502  \2502              max-width: $container-big-width;\a 53  \2502  \2502              .container-big{\a 54  \2502  \2502                  overflow-x: hidden;\a 55  \2502  \2502                  width: calc($container-big-width - (px2rem(60) * 2));\a 56  \2502  \2502              }\a 57  \2502  \2502              &--arrow{\a 58  \2502  \2502                  display: flex;\a 59  \2502  \2502                  align-items: center;\a 60  \2502  \2502                  justify-content: center;\a 61  \2502  \2502                  width: px2rem(46);\a 62  \2502  \2502                  height: px2rem(46);\a 63  \2502  \2502                  aspect-ratio: 1 / 1;\a 64  \2502  \2502                  border-radius: 50%;\a 65  \2502  \2502                  background-color: $default-light-color;\a 66  \2502  \2502                  border: px2rem(1) solid $text-color;\a 67  \2502  \2502                  cursor: pointer;\a 68  \2502  \2502                  &::before{\a 69  \2502  \2502                      content: \"\";\a 70  \2502  \2502                      display: block;\a 71  \2502  \2502                      width: px2rem(10);\a 72  \2502  \2502                      aspect-ratio: 1 / 1;\a 73  \2502  \2502                      height: 100%;\a 74  \2502  \2502                      mask-image: url(\"../images/reviews/arrow.svg\");\a 75  \2502  \2502                      mask-position: center;\a 76  \2502  \2502                      mask-size: contain;\a 77  \2502  \2502                      mask-repeat: no-repeat;\a 78  \2502  \2502                      -webkit-mask-image: url(\"../images/reviews/arrow.svg\");\a 79  \2502  \2502                      -webkit-mask-position: center;\a 80  \2502  \2502                      -webkit-mask-size: contain;\a 81  \2502  \2502                      -webkit-mask-repeat: no-repeat;\a 82  \2502  \2502                      background-color: $text-color;\a 83  \2502  \2502                  }\a 84  \2502  \2502              }\a 85  \2502  \2502              &--arrow.right{\a 86  \2502  \2502                  transform: rotate(180deg);\a 87  \2502  \2502              }\a 88  \2502  \2502              &--row{\a 89  \2502  \2502                  padding-top: px2rem(20);\a 90  \2502  \2502                  min-width: 100vw;\a 91  \2502  \2502                  flex-wrap: nowrap;\a 92  \2502  \2502                  &--item{\a 93  \2502  \2502                      display: inline-flex;\a 94  \2502  \2502                      flex-direction: column;\a 95  \2502  \2502                      @include col(12, 12);\a 96  \2502  \2502  \a 97  \2502  \2502                      &--text{\a 98  \2502  \2502                          display: flex;\a 99  \2502  \2502                          border-radius: px2rem(18);\a 100 \2502  \2502  \a 101 \2502  \2502                          box-shadow: $review-item-drop-shadow;\a 102 \2502  \2502                          background-color: $default-light-color;\a 103 \2502  \2502                          padding: px2rem(29) px2rem(29) px2rem(42) px2rem(29);\a 104 \2502  \2502                          position: relative;\a 105 \2502  \2502                          &::before, &::after{\a 106 \2502  \2502                              content: \"\";\a 107 \2502  \2502                              display: block;\a 108 \2502  \2502                              aspect-ratio: 1 / 1;\a 109 \2502  \2502                              position: absolute;\a 110 \2502  \2502                              background-color: $default-light-color;\a 111 \2502  \2502                              border-radius: 50%;\a 112 \2502  \2502                          }\a 113 \2502  \2502                          &::before{\a 114 \2502  \2502                              width: px2rem(36);\a 115 \2502  \2502                              height: px2rem(36);\a 116 \2502  \2502                              bottom: px2rem(-14);\a 117 \2502  \2502                              left: px2rem(92);\a 118 \2502  \2502                              box-shadow: $review-item-circle-1-drop-shadow;\a 119 \2502  \2502                          }\a 120 \2502  \2502                          &::after{\a 121 \2502  \2502                              width: px2rem(18);\a 122 \2502  \2502                              height: px2rem(18);\a 123 \2502  \2502                              bottom: px2rem(-34);\a 124 \2502  \2502                              left: px2rem(80);\a 125 \2502  \2502                              box-shadow: $review-item-circle-2-drop-shadow;\a 126 \2502  \2502                          }\a 127 \2502  \2502                          &--content{\a 128 \2502  \2502                              font-size: px2rem(16);\a 129 \2502  \2502                              line-height: px2rem(22.72);\a 130 \2502  \2502                              color: $text-color;\a 131 \2502  \2502                              &::before{\a 132 \2502  \2502                                  display: inline;\a 133 \2502  \2502                                  content: \"\201c \";\a 134 \2502  \2502                              }\a 135 \2502  \2502                              &::after{\a 136 \2502  \2502                                  display: inline;\a 137 \2502  \2502                                  content: \"\201c \";\a 138 \2502  \2502                              }\a 139 \2502  \2502                          }\a 140 \2502  \2502                      }\a 141 \2502  \2502                      &--author{\a 142 \2502  \2502                          margin-top: px2rem(28);\a 143 \2502  \2502                          display: flex;\a 144 \2502  \2502                          align-items: center;\a 145 \2502  \2502                          &--photo{\a 146 \2502  \2502                              width: px2rem(66);\a 147 \2502  \2502                              height: px2rem(66);\a 148 \2502  \2502                              border-radius: 50%;\a 149 \2502  \2502                              overflow: hidden;\a 150 \2502  \2502                              margin-left: px2rem(23);\a 151 \2502  \2502                              display: flex;\a 152 \2502  \2502                              justify-content: center;\a 153 \2502  \2502                              align-items: center;\a 154 \2502  \2502                              & > *{\a 155 \2502  \2502                                  width: 100%;\a 156 \2502  \2502                                  height: 100%;\a 157 \2502  \2502                                  object-fit: cover;\a 158 \2502  \2502                              }\a 159 \2502  \2502                              & > span{\a 160 \2502  \2502                                  font-family: \"SF Pro Text Semibold\";\a 161 \2502  \2502                                  color: $default-light-color;\a 162 \2502  \2502                                  display: flex;\a 163 \2502  \2502                                  justify-content: center;\a 164 \2502  \2502                                  align-items: center;\a 165 \2502  \2502                                  font-size: px2rem(23);\a 166 \2502  \2502                                  background-color: $input-tab-input-color;\a 167 \2502  \2502                              }\a 168 \2502  \2502  \a 169 \2502  \2502                          }\a 170 \2502  \2502                          &--desc{\a 171 \2502  \2502                              display: flex;\a 172 \2502  \2502                              flex-direction: column;\a 173 \2502  \2502                              margin-left: px2rem(15);\a 174 \2502  \2502                              &--name{\a 175 \2502  \2502                                  font-family: 'SF Pro Text Semibold';\a 176 \2502  \2502                                  font-size: px2rem(20);\a 177 \2502  \2502                                  line-height: px2rem(28.4);\a 178 \2502  \2502                                  color: $review-item-name-color;\a 179 \2502  \2502                              }\a 180 \2502  \2502                              &--date{\a 181 \2502  \2502                                  font-family: 'SF Pro Text Medium';\a 182 \2502  \2502                                  font-size: px2rem(16);\a 183 \2502  \2502                                  line-height: px2rem(22.72);\a 184 \2502  \2502                                  color: $review-item-date-color;\a 185 \2502  \2502                              }\a 186 \2502  \2502                          }\a 187 \2502  \2502                          &--grade{\a 188 \2502  \2502                              margin-left: px2rem(11);\a 189 \2502  \2502                              &--text{\a 190 \2502  \2502                                  display: flex;\a 191 \2502  \2502                                  align-items: center;\a 192 \2502  \2502                                  font-size: px2rem(16);\a 193 \2502  \2502                                  line-height: px2rem(22.72);\a 194 \2502  \2502                                  font-family: 'SF Pro Text Heavy';\a 195 \2502  \2502                                  color: $review-item-grade-text-color;\a 196 \2502  \2502                                  &::before{\a 197 \2502  \2502                                      content: \"\";\a 198 \2502  \2502                                      display: inline-flex;\a 199 \2502  \2502                                      background-color: $review-item-grade-text-color;\a 200 \2502  \2502                                      width: px2rem(18);\a 201 \2502  \2502                                      height: px2rem(18);\a 202 \2502  \2502                                      aspect-ratio: 1 / 1;\a 203 \2502  \2502                                      mask-image: url(\"../images/reviews/star.svg\");\a 204 \2502  \2502                                      mask-size: contain;\a 205 \2502  \2502                                      mask-repeat: no-repeat;\a 206 \2502  \2502                                      mask-position: center;\a 207 \2502  \2502                                      -webkit-mask-image: url(\"../images/reviews/star.svg\");\a 208 \2502  \2502                                      -webkit-mask-size: contain;\a 209 \2502  \2502                                      -webkit-mask-repeat: no-repeat;\a 210 \2502  \2502                                      -webkit-mask-position: center;\a 211 \2502  \2502                                      margin-right: px2rem(4);\a 212 \2502  \2502                                  }\a 213 \2502  \2502                              }\a 214 \2502  \2502                          }\a 215 \2502  \2502                      }\a 216 \2502  \2502                  }\a 217 \2502  \2502  \a 218 \2502  \2502                  &--item.green > &--item--text, &--item.green > &--item--text::before, &--item.green > &--item--text::after{\a 219 \2502  \2502                      background-color: $review-item-green-text;\a 220 \2502  \2502                  }\a 221 \2502  \2502  \a 222 \2502  \2502                  &--item.green > &--item--text::before,\a 223 \2502  \2502                  &--item.red > &--item--text::before{\a 224 \2502  \2502                      box-shadow: unset;\a 225 \2502  \2502                  }\a 226 \2502  \2502  \a 227 \2502  \2502                  &--item.green > &--item--text > &--item--text--label{\a 228 \2502  \2502                      position: absolute;\a 229 \2502  \2502                      border-radius: px2rem(6);\a 230 \2502  \2502                      padding: px2rem(4) px2rem(5);\a 231 \2502  \2502                      transform: rotate(9deg);\a 232 \2502  \2502                      background-color: $default-light-color;\a 233 \2502  \2502                      box-shadow: $review-label-box-shadow;\a 234 \2502  \2502                      letter-spacing: 0.03em;\a 235 \2502  \2502                      font-size: px2rem(10);\a 236 \2502  \2502                      line-height: px2rem(16);\a 237 \2502  \2502                      font-family: 'SF Pro Text Heavy';\a 238 \2502  \2502                      text-transform: uppercase;\a 239 \2502  \2502                      text-align: center;\a 240 \2502  \2502                      color: $review-item-green-text;\a 241 \2502  \2502                      top: px2rem(0);\a 242 \2502  \2502                      right: px2rem(-15);\a 243 \2502  \2502                  }\a 244 \2502  \2502  \a 245 \2502  \2502                  &--item.green > &--item--text > &--item--text--content,\a 246 \2502  \2502                  &--item.red > &--item--text > &--item--text--content{\a 247 \2502  \2502                      color: $default-light-color;\a 248 \2502  \2502                  }\a 249 \2502  \2502  \a 250 \2502  \2502                  &--item.red > &--item--text, &--item.red > &--item--text::before, &--item.red > &--item--text::after{\a 251 \2502  \2502                      background-color: $review-item-red-text;\a 252 \2502  \2502                  }\a 253 \2502  \2502  \a 254 \2502  \2502                  &--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text::before{\a 255 \2502  \2502                      background-color: $review-item-red-text;\a 256 \2502  \2502                  }\a 257 \2502  \2502  \a 258 \2502  \2502                  &--item.red > &--item--author > &--item--author--grade > &--item--author--grade--text{\a 259 \2502  \2502                      color: $review-item-red-text;\a 260 \2502  \2502                  }\a 261 \2502  \2502  \a 262 \2502  \2502              }\a 263 \2502  \2502          }\a 264 \2502  \2502      }\a 265 \2502  \2514  }\a     \2575 \a   reviews.scss 1:1  root stylesheet";
 }

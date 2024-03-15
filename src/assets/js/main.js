@@ -1,3 +1,15 @@
+function stringToColor(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+
+    const color = `hsl(${hash % 360}, 100%, 70%)`;
+    return color;
+}
+
+
+
 document.querySelector(".header__burger--icon").addEventListener("click", function () {
     document.querySelector(".header__burger--icon").classList.toggle("active");
     document.querySelector(".header__nav").classList.toggle("active");
@@ -113,6 +125,20 @@ document.querySelectorAll('.faqSec__items--item--title').forEach(item => {
 });
 
 
+document.querySelectorAll('.reviews__box--row--item').forEach(item => {
+    let fullNameElement = item.querySelector('.reviews__box--row--item--author--desc--name');
+    let fullName = fullNameElement.textContent.trim();
+    let parts = fullName.split(' ').slice(0, 2);
+
+    let initials = parts.map(part => part[0]).join('');
+    let nameColor = stringToColor(initials);
+    // Предполагается, что item это элемент, полученный через document.querySelector или аналогичный метод
+    const photoElement = item.querySelector('.reviews__box--row--item--author--photo');
+
+    photoElement.innerHTML = "<span>" + initials + "</span>";
+    photoElement.style.backgroundColor = nameColor;
+
+});
 
 
 

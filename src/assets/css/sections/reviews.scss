@@ -148,11 +148,24 @@
 							border-radius: 50%;
 							overflow: hidden;
 							margin-left: px2rem(23);
-							& > img{
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							& > *{
 								width: 100%;
 								height: 100%;
 								object-fit: cover;
 							}
+							& > span{
+								font-family: "SF Pro Text Semibold";
+								color: $default-light-color;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								font-size: px2rem(23);
+								background-color: $input-tab-input-color;
+							}
+
 						}
 						&--desc{
 							display: flex;
@@ -344,7 +357,7 @@
 					&--text{
 						display: flex;
 						border-radius: px2rem(18);
-						height: px2rem(170);
+						min-height: px2rem(170);
 						box-shadow: $review-item-drop-shadow;
 						background-color: $default-light-color;
 						padding: px2rem(29) px2rem(29) px2rem(42) px2rem(29);
@@ -395,7 +408,7 @@
 							border-radius: 50%;
 							overflow: hidden;
 							margin-left: px2rem(23);
-							& > img{
+							& > *{
 								width: 100%;
 								height: 100%;
 								object-fit: cover;
